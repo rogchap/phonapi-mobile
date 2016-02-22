@@ -1,0 +1,22 @@
+[ignore]
+# ignore forked react components by platform
+.*/*.web.js
+.*/*.android.js
+
+# ignore react-tools where there are overlaps
+# but don't ignore anything that react-native relies on
+.*/node_modules/react-tools/src/vendor/core/ExecutionEnvironment.js
+.*/node_modules/react-tools/src/browser/eventPlugins/ResponderEventPlugin.js
+.*/node_modules/react-tools/src/browser/ui/React.js
+.*/node_modules/react-tools/src/core/ReactInstanceHandles.js
+.*/node_modules/react-tools/src/event/EventPropagators.js
+
+[include]
+
+.*/node_modules/react-native-button
+
+[libs]
+node_modules/react-native/Libraries/react-native/react-native-interface.js
+
+[options]
+module.system=haste
