@@ -4,19 +4,16 @@
 import React, {
   Component,
   View,
+  Text,
   StyleSheet,
 } from 'react-native';
-import Button from 'react-native-button';
-import Router from './Router';
+import RightToLeftCard from '../Navigation/RightToLeftCard';
 
-export default class extends Component {
+class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.base}>
-        <Button
-          onPress={() => { this.props.navigator.push(Router.signUpFlow()); }}>
-          Get Started
-        </Button>
+      <Text>Home screen</Text>
       </View>
     );
   }
@@ -29,3 +26,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+HomeScreen = RightToLeftCard.create(HomeScreen);
+export default HomeScreen;

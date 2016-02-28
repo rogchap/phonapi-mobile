@@ -6,8 +6,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "@exponent/react-native-navigator": "^0.4.1",
-    "react-native": "^0.21.0-rc",
-    "react-native-button": "^1.4.2"
+    "react-native": "github:facebook/react-native#master",
+    "react-native-button": "^1.4.2",
+    "react-native-drawer": "^1.16.7"
   }
 }

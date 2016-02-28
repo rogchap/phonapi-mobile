@@ -7,13 +7,13 @@ import React, {
   Text,
   StyleSheet,
 } from 'react-native';
-import Button from 'react-native-button';
+import RightToLeftCard from '../Navigation/RightToLeftCard';
 
-export default class extends Component {
+class CallLogScreen extends Component {
   render() {
     return (
       <View style={styles.base}>
-        <Button>Next</Button>
+      <Text>Call log screen</Text>
       </View>
     );
   }
@@ -26,3 +26,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+CallLogScreen = RightToLeftCard.create(CallLogScreen);
+export default CallLogScreen;
