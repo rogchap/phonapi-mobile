@@ -16,6 +16,7 @@ class SettingsRootScreen extends Component {
       <View style={styles.base}>
         <Button onPress={() => this.props.onNavigate({ type: 'BackAction' })}>Back</Button>
         <Text>Settings root screen</Text>
+          <Button onPress={() => this.props.onNavigate({ key: 'Info' })}>More</Button>
       </View>
     );
   }

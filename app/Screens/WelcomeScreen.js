@@ -6,20 +6,14 @@ import React, {
   View,
   Text,
   StyleSheet,
-  NavigationExperimental,
 } from 'react-native';
 import Button from 'react-native-button';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
-
-const {
-  StateUtils: NavigationStateUtils,
-} = NavigationExperimental;
 
 class WelcomeScreen extends Component {
   render() {
     return (
       <View style={styles.base}>
-        <Button onPress={() => this.props.onNavigate({ type: 'BackAction' })}>Back</Button>
         <Text>Welcome screen</Text>
         <Button onPress={() => {this.props.onNavigate({ type: 'Reset', key: 'Home' })}}>Next</Button>
       </View>
@@ -35,5 +29,5 @@ const styles = StyleSheet.create({
   },
 });
 
-WelcomeScreen = RightToLeftCard.create(WelcomeScreen, { enableGestures:false });
+WelcomeScreen = RightToLeftCard.create(WelcomeScreen, { enableGestures:false, allowBack: false });
 export default WelcomeScreen;

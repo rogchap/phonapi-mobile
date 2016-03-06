@@ -13,7 +13,7 @@ class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.base}>
-      <Text>Home screen</Text>
+        <Text>Home screen</Text>
       </View>
     );
   }

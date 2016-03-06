@@ -7,12 +7,13 @@ import React, {
   View,
   Text,
 } from 'react-native';
+import { BlurView } from 'react-native-blur';
 import Button from 'react-native-button';
 
 class MenuPanel extends Component {
   render() {
     return (
-      <View style={styles.base}>
+      <BlurView blurType="dark" style={styles.base}>
         <Text>Menu Panel</Text>
           <Button
             onPress={() => { this.props.onNavigate({ type: 'Reset', key: 'Home' }); }}>
@@ -26,7 +27,7 @@ class MenuPanel extends Component {
             onPress={() => { this.props.onNavigate({ key: 'SettingsRoot' }); }}>
             Settings
           </Button>
-      </View>
+      </BlurView>
     );
   }
 }

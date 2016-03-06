@@ -10,11 +10,13 @@ import React, {
   PanResponder,
   NavigationExperimental,
 } from 'react-native';
+import BackButton from './BackButton';
 
 const {
   Container: NavigationContainer,
   RootContainer : NavigationRootContainer,
  } = NavigationExperimental;
+
 
 const ENABLE_GESTURES = Platform.OS !== 'android';
 
@@ -109,33 +111,49 @@ class Card extends Component {
     const cardPosition = Animated.add(this.props.position, new Animated.Value(-this.props.index));
     const gestureValue = Animated.multiply(cardPosition, this.props.layout.width);
     const touchResponderHandlers = this._responder ? this._responder.panHandlers : null;
+
+    let backButton = null;
+    if(this.props.index > 0 && this.props.allowBack) {
+      backButton = (
+        <BackButton
+          style={styles.back}
+          onPress={() => this.props.onNavigate({type: 'BackAction'})} />
+      );
+    }
+
     return (
       <Animated.View
         {...touchResponderHandlers}
         style={[
           styles.card,
           {
-            right: gestureValue.interpolate({
+            /*right: gestureValue.interpolate({
               inputRange: [-1, 0, 1],
               outputRange: [-1, 0, 0.2],
             }),
             left: gestureValue.interpolate({
               inputRange: [-1, 0, 1],
               outputRange: [1, 0, -1],
-            }),
-            shadowOpacity: cardPosition.interpolate({
-              inputRange: [-1,0,1],
-              outputRange: [0,0.4,0],
-            }),
+            }),*/
+            transform: [
+              {
+                translateX: gestureValue.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [0, -1],
+                }),
+              },
+            ],
           }
         ]}>
         {this.props.children}
+        {backButton}
       </Animated.View>
     );
   }
 }
 Card.defaultProps = {
   enableGestures: true,
+  allowBack: true,
 }
 Card = NavigationContainer.create(Card);
 
@@ -160,15 +178,22 @@ function createRightToLeftCard(Comp: Component, cardProps: Object = {}): Compone
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',
-    shadowColor: 'black',
+    backgroundColor: 'transparent',
+    /*shadowColor: 'black',
     shadowOpacity: 0.4,
     shadowOffset: {width: 0, height: 0},
-    shadowRadius: 10,
+    shadowRadius: 10,*/
     top: 0,
     bottom: 0,
+    left: 0,
+    right: 0,
     position: 'absolute',
   },
+  back: {
+    position: 'absolute',
+    top: 50,
+    left: 30,
+  }
 });
 
 export default { Card, create: createRightToLeftCard };
