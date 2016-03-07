@@ -18,11 +18,21 @@ class TextInputField extends Component {
 
   static defaultProps = {
     label: '',
+    hairline: true,
   };
 
   render() {
 
-    const { label, iconSource, ...other } = this.props;
+    const { label, iconSource, hairline, ...other } = this.props;
+
+    let hairlineView;
+    if (hairline) {
+      hairlineView = (
+        <View>
+          <Hairline />
+        </View>
+      );
+    }
 
     return (
       <View style={styles.base}>
@@ -40,9 +50,7 @@ class TextInputField extends Component {
               {...other} />
           </View>
         </View>
-        <View>
-          <Hairline />
-        </View>
+        {hairlineView}
       </View>
     );
   }
@@ -68,6 +76,7 @@ const styles = StyleSheet.create({
   },
   field: {
     marginLeft: 30,
+    marginBottom: 5,
     flex: 1,
   },
   icon: {
@@ -76,10 +85,14 @@ const styles = StyleSheet.create({
   label: {
     color: 'white',
     fontSize: 12,
+    fontFamily: 'ProximaNova-Regular',
+    letterSpacing: 1.3,
   },
   input: {
     color: 'white',
-    height: 40,
+    height: 30,
+    fontSize: 18,
+    fontFamily: 'ProximaNova-Regular',
   }
 });
 

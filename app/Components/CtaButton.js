@@ -37,9 +37,8 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   text: {
-    fontFamily: 'HelveticaNeue-Light',
-    fontWeight: '200',
-    fontSize: 24,
+    fontFamily: 'ProximaNova-Light',
+    fontSize: 25,
   }
 });
 

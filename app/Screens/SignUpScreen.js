@@ -13,6 +13,7 @@ import KeyboardSpacer from 'react-native-keyboard-spacer';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
 import CtaButton from '../Components/CtaButton';
 import TextInputField from '../Components/TextInputField';
+import Logo from '../Components/Logo';
 
 class SignUpScreen extends Component {
   _nameTextInputField;
@@ -23,10 +24,7 @@ class SignUpScreen extends Component {
     return (
       <View style={styles.base}>
         <View style={styles.header}>
-          <View style={styles.logo}>
-            <Image source={require('../images/logo.png')} />
-            <Text style={styles.logoText}>P H O N A P I</Text>
-          </View>
+          <Logo />
         </View>
         <View style={styles.form}>
           <TextInputField
@@ -78,15 +76,6 @@ const styles = StyleSheet.create({
     marginTop: 22,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  logo: {
-    alignItems: 'center',
-  },
-  logoText: {
-    marginTop: 10,
-    color: 'white',
-    fontSize: 26,
-    fontWeight: '800',
   },
   form: {
     flex: 3,

@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
   item: {
     color: 'white',
     fontSize: 22,
-    fontWeight: '200',
-    fontFamily: 'HelveticaNeue-Light',
+    fontFamily: 'ProximaNova-Light',
+    fontWeight: 'normal',
   }
 });
 

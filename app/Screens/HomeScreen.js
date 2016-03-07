@@ -5,6 +5,7 @@ import React, {
   Component,
   View,
   Text,
+  Image,
   StyleSheet,
 } from 'react-native';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
