@@ -6,6 +6,7 @@ import WelcomeScreen from './WelcomeScreen';
 import HomeScreen from './HomeScreen';
 import CallLogScreen from './CallLogScreen';
 import SettingsRootScreen from './SettingsRootScreen';
+import NumberSearchScreen from './NumberSearchScreen';
 
 export default {
   Info: InfoScreen,
@@ -16,4 +17,5 @@ export default {
   Home: HomeScreen,
   CallLog: CallLogScreen,
   SettingsRoot: SettingsRootScreen,
+  NumberSearch: NumberSearchScreen,
 }

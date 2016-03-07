@@ -7,16 +7,15 @@ import React, {
   Text,
   StyleSheet,
 } from 'react-native';
-import Button from 'react-native-button';
+import CtaButton from '../Components/CtaButton';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
 
 class OrganisationScreen extends Component {
   render() {
     return (
       <View style={styles.base}>
-        <Button onPress={() => this.props.onNavigate({ type: 'BackAction' })}>Back</Button>
         <Text>Organisation screen</Text>
-        <Button onPress={() => this.props.onNavigate({key: 'Welcome'})}>Next</Button>
+        <CtaButton onPress={() => this.props.onNavigate({key: 'Welcome'})}>NEXT</CtaButton>
       </View>
     );
   }

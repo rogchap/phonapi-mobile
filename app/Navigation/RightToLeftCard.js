@@ -117,7 +117,7 @@ class Card extends Component {
       backButton = (
         <BackButton
           style={styles.back}
-          onPress={() => this.props.onNavigate({type: 'BackAction'})} />
+          onPress={this._onBackButtonPress.bind(this)} />
       );
     }
 
@@ -149,6 +149,10 @@ class Card extends Component {
         {backButton}
       </Animated.View>
     );
+  }
+
+  _onBackButtonPress() {
+    this.props.onNavigate({type: 'BackAction'});
   }
 }
 Card.defaultProps = {

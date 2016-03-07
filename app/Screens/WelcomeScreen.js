@@ -7,7 +7,7 @@ import React, {
   Text,
   StyleSheet,
 } from 'react-native';
-import Button from 'react-native-button';
+import CtaButton from '../Components/CtaButton';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
 
 class WelcomeScreen extends Component {
@@ -15,7 +15,9 @@ class WelcomeScreen extends Component {
     return (
       <View style={styles.base}>
         <Text>Welcome screen</Text>
-        <Button onPress={() => {this.props.onNavigate({ type: 'Reset', key: 'Home' })}}>Next</Button>
+        <CtaButton onPress={() => {this.props.onNavigate({ type: 'Reset', key: 'Home' })}}>
+          Done
+        </CtaButton>
       </View>
     );
   }

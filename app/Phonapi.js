@@ -137,5 +137,7 @@ const styles = StyleSheet.create({
   bg: {
     flex: 1,
     resizeMode: Image.resizeMode.cover,
+    width: null,
+    height: null,
   }
 });

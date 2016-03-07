@@ -9,24 +9,34 @@ import React, {
 } from 'react-native';
 import { BlurView } from 'react-native-blur';
 import Button from 'react-native-button';
+import CloseButton from './CloseButton';
 
 class MenuPanel extends Component {
   render() {
     return (
       <BlurView blurType="dark" style={styles.base}>
-        <Text>Menu Panel</Text>
+        <View style={styles.spacer}></View>
+        <View style={styles.container}>
           <Button
+            style={styles.item}
             onPress={() => { this.props.onNavigate({ type: 'Reset', key: 'Home' }); }}>
-            Phone Keypad
+            Keypad
           </Button>
           <Button
+            style={styles.item}
             onPress={() => { this.props.onNavigate({ type: 'Reset', key: 'CallLog' }); }}>
-            CallLog
+            Call log
           </Button>
           <Button
+            style={styles.item}
             onPress={() => { this.props.onNavigate({ key: 'SettingsRoot' }); }}>
             Settings
           </Button>
+        </View>
+        <View style={styles.spacer}></View>
+        <CloseButton
+          style={styles.closeBtn}
+          onPress={() => this.context.drawer.close()} />
       </BlurView>
     );
   }
@@ -35,9 +45,31 @@ class MenuPanel extends Component {
 const styles = StyleSheet.create({
   base: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'column',
   },
+  closeBtn: {
+    position: 'absolute',
+    top: 30,
+    right: 15,
+  },
+  container: {
+    flex: 2,
+    justifyContent: 'space-around',
+  },
+  spacer: {
+    flex: 1,
+  },
+  item: {
+    color: 'white',
+    fontSize: 22,
+    fontWeight: '200',
+    fontFamily: 'HelveticaNeue-Light',
+  }
 });
+
+MenuPanel.contextTypes = {
+  drawer: React.PropTypes.object,
+};
+
 
 export default MenuPanel;

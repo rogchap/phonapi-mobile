@@ -14,7 +14,6 @@ class LogInScreen extends Component {
   render() {
     return (
       <View style={styles.base}>
-        <Button onPress={() => this.props.onNavigate({ type: 'BackAction' })}>Back</Button>
         <Text>Log in screen</Text>
         <Button onPress={() => this.props.onNavigate({ type: 'Reset', key: 'Home' })}>Next</Button>
       </View>
