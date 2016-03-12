@@ -88,7 +88,7 @@ export default class Phonapi extends Component {
               key={navigationState.children[0].key + '_flow'}
               style={{ flex: 1 }}
               navigationState={navigationState}
-              renderOverlay={(position, layout) => this._renderOverlay(navigationState, position, layout)}
+              //renderOverlay={(position, layout) => this._renderOverlay(navigationState, position, layout)}
               renderScene={(child, index, position, layout) => {
                 invariant(Screens[child.key],
                   `No Screen with key: ${child.key}. Have you defined it in Screens/index.js?`);

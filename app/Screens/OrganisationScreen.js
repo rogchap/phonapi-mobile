@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   },
   header: {
     flex: 2,
-    marginTop: 22,
+    marginTop: 20,
     alignItems: 'center',
     justifyContent: 'center',
   },

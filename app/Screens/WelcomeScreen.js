@@ -14,10 +14,16 @@ class WelcomeScreen extends Component {
   render() {
     return (
       <View style={styles.base}>
-        <Text>Welcome screen</Text>
-        <CtaButton onPress={() => {this.props.onNavigate({ type: 'Reset', key: 'Home' })}}>
-          Done
-        </CtaButton>
+        <View style={styles.content}>
+          <Text style={styles.text}>Woohoo!</Text>
+          <Text style={styles.text}>[Organisation Name]</Text>
+          <Text style={styles.text}>is ready to start using Phonapi</Text>
+        </View>
+        <View style={styles.cta}>
+          <CtaButton onPress={() => {this.props.onNavigate({ type: 'Reset', key: 'Home' })}}>
+            Done
+          </CtaButton>
+        </View>
       </View>
     );
   }
@@ -26,8 +32,22 @@ class WelcomeScreen extends Component {
 const styles = StyleSheet.create({
   base: {
     flex: 1,
+  },
+  content: {
+    flex: 5,
+    marginTop: 20,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 30,
+  },
+  cta: {
+    flex: 1,
+  },
+  text: {
+    color: 'white',
+    fontFamily: 'ProximaNova-Regular',
+    fontSize: 34,
+    textAlign: 'center',
   },
 });
 
