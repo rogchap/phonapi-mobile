@@ -4,23 +4,15 @@
 import React, {
   Component,
   View,
-  Text,
-  Image,
   StyleSheet,
   Dimensions,
 } from 'react-native';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
 import MenuButton from '../Components/MenuButton';
-import CtaButton from '../Components/CtaButton';
-import NumberPad from '../Components/NumberPad';
-import CallButton from '../Components/CallButton';
-import ImageButton from '../Components/ImageButton';
-import DropdownButton from '../Components/DropdownButton';
 import NoNumberView from '../Components/NoNumberView';
 import NumberPadView from '../Components/NumberPadView';
 
 class HomeScreen extends Component {
-
 
   render() {
     //TODO render based on status

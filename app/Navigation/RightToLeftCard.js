@@ -195,8 +195,8 @@ const styles = StyleSheet.create({
   },
   back: {
     position: 'absolute',
-    top: 50,
-    left: 30,
+    top: 25,
+    left: 15,
   }
 });
 

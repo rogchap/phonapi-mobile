@@ -4,27 +4,74 @@
 import React, {
   Component,
   View,
-  Text,
   StyleSheet,
 } from 'react-native';
 import Button from 'react-native-button';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
+import CtaButton from '../Components/CtaButton';
+import TextInputField from '../Components/TextInputField';
+import Logo from '../Components/Logo';
 
 class LogInScreen extends Component {
+  _emailTextInputField;
+  _passwordTextInputField;
+
   render() {
     return (
       <View style={styles.base}>
-        <Text>Log in screen</Text>
-        <Button onPress={() => this.props.onNavigate({ type: 'Reset', key: 'Home' })}>Next</Button>
+        <View style={styles.header}>
+          <Logo />
+        </View>
+        <View style={styles.form}>
+          <TextInputField
+            ref={c => this._emailTextInputField = c}
+            label="Email"
+            placeholder="eg. sam.smith@mycompany.com"
+            keyboardType="email-address"
+            autoCapitalize="none"
+            iconSource={require('../images/email.png')}  />
+          <TextInputField
+            ref={c => this._passwordTextInputField = c}
+            label="Password"
+            placeholder="enter your password"
+            secureTextEntry={true}
+            iconSource={require('../images/lock.png')} />
+        </View>
+        <View style={styles.cta}>
+          <CtaButton onPress={this._onCtaButtonPress.bind(this)}>Sign in</CtaButton>
+        </View>
+        <KeyboardSpacer />
       </View>
     );
+  }
+
+  _blurInputs() {
+    this._emailTextInputField.blur();
+    this._passwordTextInputField.blur();
+  }
+
+  _onCtaButtonPress() {
+    this._blurInputs();
+    this.props.onNavigate({ type: 'Reset', key: 'Home' });
   }
 }
 
 const styles = StyleSheet.create({
   base: {
     flex: 1,
+  },
+  header: {
+    flex: 2,
+    marginTop: 20,
     alignItems: 'center',
+    justifyContent: 'center',
+  },
+  form: {
+    flex: 3,
+  },
+  cta: {
+    flex: 1,
     justifyContent: 'center',
   },
 });
