@@ -4,15 +4,15 @@
 import React, {
   Component,
   View,
-  Text,
   StyleSheet,
 } from 'react-native';
+import Text from './Text';
 
 class Header extends Component {
   render() {
     return (
       <View style={styles.base}>
-        <Text style={styles.text}>Settings</Text>
+        <Text style={styles.text}>{this.props.children}</Text>
       </View>
     );
   }
@@ -31,9 +31,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    color: 'white',
-    fontFamily: 'ProximaNova-Regular',
-    fontSize: 20,
+    fontSize: 24,
   },
 });
 

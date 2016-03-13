@@ -1,11 +1,11 @@
 import React, {
   Component,
   View,
-  Text,
   Image,
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
+import Text from './Text';
 
 class DropdownButton extends Component {
 
@@ -16,7 +16,7 @@ class DropdownButton extends Component {
       <TouchableOpacity onPress={()=> {}}>
         <View style={styles.base}>
           <View>
-            <Text style={styles.text}>{this.props.children}</Text>
+            <Text>{this.props.children}</Text>
           </View>
           <Image
             style={styles.image}
@@ -33,12 +33,8 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end'
   },
   image: {
-    marginBottom: 4,
+    marginBottom: 6,
     marginLeft: 5,
-  },
-  text: {
-    color: 'white',
-    fontFamily: 'ProximaNova-Regular',
   },
 });
 

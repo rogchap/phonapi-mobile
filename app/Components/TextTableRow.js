@@ -16,10 +16,10 @@ class TextTableRow extends Component {
     return (
       <TableRow {...other}>
         <View style={styles.base}>
-          <Text style={styles.text}>
+          <Text>
             {children}
           </Text>
-          {rightText ? <Text>{rightText}</Text> : null}
+          {rightText ? <Text style={styles.text}>{rightText}</Text> : null}
         </View>
       </TableRow>
     );
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 17,
+    fontSize: 14,
   }
 })
 

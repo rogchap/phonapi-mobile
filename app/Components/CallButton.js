@@ -13,7 +13,6 @@ class CallButton extends Component {
 
   render() {
     const { tintColor } = this.props;
-console.log(tintColor);
     return (
       <TouchableHighlight
         style={styles.onPress}

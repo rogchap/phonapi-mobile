@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   base: {
     color: 'white',
     fontFamily: 'ProximaNova-Regular',
+    fontSize: 20,
   },
 });
 

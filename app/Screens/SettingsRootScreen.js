@@ -6,16 +6,21 @@ import React, {
   View,
   ScrollView,
   StyleSheet,
+  Alert,
+  Linking,
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
 import Header from '../Components/Header';
 import TextTableRow from '../Components/TextTableRow';
+import Text from '../Components/Text';
 
 const version = __DEV__ ?  DeviceInfo.getReadableVersion() : DeviceInfo.getVersion();
 
 class SettingsRootScreen extends Component {
   render() {
+    // TODO Set app id for appstore rating
+    const appStoreId = 545174222;
     return (
       <View style={styles.base}>
         <ScrollView style={styles.scroll}>
@@ -47,27 +52,39 @@ class SettingsRootScreen extends Component {
             <TextTableRow top={true}>
               Submit feedback
             </TextTableRow>
-            <TextTableRow>
+            <TextTableRow onPress={() => Linking.openURL(`itms-apps://itunes.apple.com/app/id${appStoreId}`)}>
               Rate Phonapi
             </TextTableRow>
           </View>
           <View style={[styles.section, styles.sectionBottom]}>
             <TextTableRow
               rightText={version}
+              onPress={() => this.props.onNavigate({ key: 'About' })}
               top={true}>
               About
             </TextTableRow>
             <TextTableRow
               rightArrow={false}
               rightText="[Organisation Name]"
-              onPress={() => this.props.onNavigate({ type: 'Reset', key: 'Info' })}>
-              Sign out
+              onPress={this._signout.bind(this)}>
+              <Text style={styles.redText}>Sign out</Text>
             </TextTableRow>
           </View>
         </ScrollView>
         <Header>Settings</Header>
       </View>
     );
+  }
+
+  _signout() {
+    Alert.alert(
+      'Sign out',
+      'Are you sure you would like to sign out of [Organisation Name]?',
+      [
+        {text: 'Cancel', style:'cancel'},
+        {text: 'OK', onPress:() => this.props.onNavigate({ type: 'Reset', key: 'Info' })}
+      ]
+    )
   }
 }
 
@@ -80,14 +97,17 @@ const styles = StyleSheet.create({
     marginTop: 64,
   },
   section: {
-    marginTop: 10,
-    marginBottom: 10,
+    marginTop: 15,
+    marginBottom: 15,
   },
   sectionTop: {
-    marginTop: 20,
+    marginTop: 30,
   },
   sectionBottom: {
-    marginBottom: 20,
+    marginBottom: 30,
+  },
+  redText: {
+    color: '#FF5043',
   },
 });
 

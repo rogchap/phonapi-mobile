@@ -3,7 +3,6 @@
 import React, {
   Component,
   View,
-  Text,
   StyleSheet,
   Dimensions,
 } from 'react-native';
@@ -11,6 +10,7 @@ import DropdownButton from './DropdownButton';
 import NumberPad from './NumberPad';
 import ImageButton from './ImageButton';
 import CallButton from './CallButton';
+import Text from './Text';
 
 const { width: pageWidth } = Dimensions.get('window');
 
@@ -30,7 +30,7 @@ class NumberPadView extends Component {
              <ImageButton source={require('../images/backspace.png')} />
            </View>
            <View style={styles.from}>
-             <Text style={styles.fromText}>FROM </Text>
+             <Text>FROM </Text>
              <DropdownButton>Sydney office</DropdownButton>
            </View>
          </View>
@@ -64,17 +64,11 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   inputText: {
-    color: 'white',
-    fontFamily: 'ProximaNova-Regular',
-    fontSize: 28,
+    fontSize: 34,
     width: pageWidth - 120 - 45,
   },
   from: {
     flexDirection: 'row',
-  },
-  fromText: {
-    color: 'white',
-    fontFamily: 'ProximaNova-Regular',
   },
   numberPad: {
     flex: 3.5,
