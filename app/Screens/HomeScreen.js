@@ -27,9 +27,7 @@ class HomeScreen extends Component {
     return (
       <View style={styles.base}>
         {view}
-        <MenuButton
-          style={styles.menuBtn}
-          onPress={() => this.context.drawer.toggle()}/>
+        <MenuButton />
       </View>
     );
   }
@@ -39,16 +37,7 @@ const styles = StyleSheet.create({
   base: {
     flex: 1,
   },
-  menuBtn: {
-    position: 'absolute',
-    left: 15,
-    top: 30,
-  },
 });
-
-HomeScreen.contextTypes = {
-  drawer: React.PropTypes.object,
-};
 
 HomeScreen = RightToLeftCard.create(HomeScreen);
 export default HomeScreen;

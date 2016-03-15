@@ -6,14 +6,26 @@ import React, {
   View,
   Text,
   StyleSheet,
+  SegmentedControlIOS,
 } from 'react-native';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
+import MenuButton from '../Components/MenuButton';
+import Header from '../Components/Header';
 
 class CallLogScreen extends Component {
   render() {
     return (
       <View style={styles.base}>
-      <Text>Call log screen</Text>
+        <Text>Call log screen</Text>
+        <Header>
+          <View style={styles.segment}>
+            <SegmentedControlIOS
+              tintColor="rgba(255,255,255,1)"
+              values={['All', 'Missed']}
+              selectedIndex={0} />
+          </View>
+        </Header>
+        <MenuButton />
       </View>
     );
   }
@@ -25,6 +37,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  segment: {
+    width: 150,
+  }
 });
 
 CallLogScreen = RightToLeftCard.create(CallLogScreen);

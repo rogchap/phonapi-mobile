@@ -14,17 +14,33 @@ class MenuButton extends Component {
   };
 
   render() {
-    const { style, onPress } = this.props;
-
+    const { style } = this.props;
     return (
-      <TouchableOpacity style={style} onPress={onPress}>
+      <TouchableOpacity style={[styles.base, style]} onPress={this._onPress.bind(this)}>
         <Image source={require('../images/menu.png')} style={styles.img} />
       </TouchableOpacity>
     );
   }
+
+  _onPress() {
+    if (this.props.onPress) {
+      this.props.onPress();
+    } else {
+      this.context.drawer.toggle();
+    }
+  }
 }
 
+MenuButton.contextTypes = {
+  drawer: React.PropTypes.object,
+};
+
 const styles = StyleSheet.create({
+  base: {
+    position: 'absolute',
+    left: 15,
+    top: 30,
+  },
   img: {
     width: 22,
     height: 17,

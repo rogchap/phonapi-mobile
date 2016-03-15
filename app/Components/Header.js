@@ -9,10 +9,18 @@ import React, {
 import Text from './Text';
 
 class Header extends Component {
+
   render() {
+    let children;
+    if (typeof this.props.children === 'string') {
+      children =  <Text style={styles.text}>{this.props.children}</Text>
+    } else {
+      children = this.props.children;
+    }
+
     return (
       <View style={styles.base}>
-        <Text style={styles.text}>{this.props.children}</Text>
+        {children}
       </View>
     );
   }
