@@ -22,6 +22,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		256FB31191A141D0AFBC94C8 /* libRNBlur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE65A5F807B45319DC9FAE7 /* libRNBlur.a */; };
+		345616A1AA9E472689E991B0 /* ReactTests.app in Frameworks */ = {isa = PBXBuildFile; fileRef = A636ABEB416B4C539F33FAA8 /* ReactTests.app */; };
 		78CCA77BB782428AAE57B85B /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17506A40B05D4D839AC49FAB /* libBVLinearGradient.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		B7F06EF630234E7AB42C0CAC /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2BEC3FE7ED4320859026BD /* libRNDeviceInfo.a */; };
@@ -30,6 +31,8 @@
 		DB9E29981C8D9BCF002FE7F9 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB9E29941C8D9BCF002FE7F9 /* ProximaNova-Bold.otf */; };
 		DB9E29991C8D9BCF002FE7F9 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB9E29951C8D9BCF002FE7F9 /* ProximaNova-Light.otf */; };
 		DB9E299A1C8D9BCF002FE7F9 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB9E29961C8D9BCF002FE7F9 /* ProximaNova-Regular.otf */; };
+		DBBFF82A1C97D58900956B99 /* RealmReact.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFF8271C97D4FE00956B99 /* RealmReact.framework */; };
+		DBBFF82B1C97D58900956B99 /* RealmReact.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFF8271C97D4FE00956B99 /* RealmReact.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,7 +134,63 @@
 			remoteGlobalIDString = A68BD7BC1BC31318005F02DF;
 			remoteInfo = RNBlur;
 		};
+		DBBFF81E1C97D4FE00956B99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F63FF2F01C16405C00B3B8E0;
+			remoteInfo = GCDWebServers;
+		};
+		DBBFF8201C97D4FE00956B99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F63FF2B11C1241E500B3B8E0;
+			remoteInfo = "RealmJS static";
+		};
+		DBBFF8221C97D4FE00956B99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02B58CB11AE99CEC009B348C;
+			remoteInfo = RealmJS;
+		};
+		DBBFF8241C97D4FE00956B99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02B58CBC1AE99CEC009B348C;
+			remoteInfo = RealmJSTests;
+		};
+		DBBFF8261C97D4FE00956B99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02B29A161B7CF7C9008A7E6B;
+			remoteInfo = RealmReact;
+		};
+		DBBFF82C1C97D58900956B99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 02B29A151B7CF7C9008A7E6B;
+			remoteInfo = RealmReact;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DBBFF82E1C97D58900956B99 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DBBFF82B1C97D58900956B99 /* RealmReact.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -154,6 +213,7 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Phonapi/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		17506A40B05D4D839AC49FAB /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
+		48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmJS.xcodeproj; path = ../node_modules/realm/RealmJS.xcodeproj; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		83486D44D0CD461D9DA8E41C /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
@@ -161,6 +221,7 @@
 		8D1671783FEF480D9BEC3318 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		8EE65A5F807B45319DC9FAE7 /* libRNBlur.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNBlur.a; sourceTree = "<group>"; };
 		9F0FB5ECF580423D99ADF781 /* RNBlur.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNBlur.xcodeproj; path = "../node_modules/react-native-blur/ios/RNBlur.xcodeproj"; sourceTree = "<group>"; };
+		A636ABEB416B4C539F33FAA8 /* ReactTests.app */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ReactTests.app; sourceTree = "<group>"; };
 		DB9E29931C8D9BCF002FE7F9 /* ProximaNova-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Black.otf"; path = "Phonapi/ProximaNova-Black.otf"; sourceTree = "<group>"; };
 		DB9E29941C8D9BCF002FE7F9 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Bold.otf"; path = "Phonapi/ProximaNova-Bold.otf"; sourceTree = "<group>"; };
 		DB9E29951C8D9BCF002FE7F9 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Light.otf"; path = "Phonapi/ProximaNova-Light.otf"; sourceTree = "<group>"; };
@@ -183,6 +244,7 @@
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
+				DBBFF82A1C97D58900956B99 /* RealmReact.framework in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
@@ -193,6 +255,7 @@
 				256FB31191A141D0AFBC94C8 /* libRNBlur.a in Frameworks */,
 				78CCA77BB782428AAE57B85B /* libBVLinearGradient.a in Frameworks */,
 				B7F06EF630234E7AB42C0CAC /* libRNDeviceInfo.a in Frameworks */,
+				345616A1AA9E472689E991B0 /* ReactTests.app in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +382,7 @@
 				9F0FB5ECF580423D99ADF781 /* RNBlur.xcodeproj */,
 				8D1671783FEF480D9BEC3318 /* BVLinearGradient.xcodeproj */,
 				83486D44D0CD461D9DA8E41C /* RNDeviceInfo.xcodeproj */,
+				48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -387,6 +451,18 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		DBBFF80C1C97D4FE00956B99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DBBFF81F1C97D4FE00956B99 /* libGCDWebServers.a */,
+				DBBFF8211C97D4FE00956B99 /* libRealmJS.a */,
+				DBBFF8231C97D4FE00956B99 /* RealmJS.framework */,
+				DBBFF8251C97D4FE00956B99 /* RealmJSTests.xctest */,
+				DBBFF8271C97D4FE00956B99 /* RealmReact.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -417,10 +493,12 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				DB1ADA871C942C55006A479C /* Update build number */,
+				DBBFF82E1C97D58900956B99 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DBBFF82D1C97D58900956B99 /* PBXTargetDependency */,
 			);
 			name = Phonapi;
 			productName = "Hello World";
@@ -497,6 +575,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = DBBFF80C1C97D4FE00956B99 /* Products */;
+					ProjectRef = 48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */;
 				},
 				{
 					ProductGroup = DB9E29761C8D9AB6002FE7F9 /* Products */;
@@ -607,6 +689,41 @@
 			remoteRef = DB9E29881C8D9AB6002FE7F9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		DBBFF81F1C97D4FE00956B99 /* libGCDWebServers.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGCDWebServers.a;
+			remoteRef = DBBFF81E1C97D4FE00956B99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DBBFF8211C97D4FE00956B99 /* libRealmJS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRealmJS.a;
+			remoteRef = DBBFF8201C97D4FE00956B99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DBBFF8231C97D4FE00956B99 /* RealmJS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RealmJS.framework;
+			remoteRef = DBBFF8221C97D4FE00956B99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DBBFF8251C97D4FE00956B99 /* RealmJSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RealmJSTests.xctest;
+			remoteRef = DBBFF8241C97D4FE00956B99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DBBFF8271C97D4FE00956B99 /* RealmReact.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RealmReact.framework;
+			remoteRef = DBBFF8261C97D4FE00956B99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -689,6 +806,11 @@
 			target = 13B07F861A680F5B00A75B9A /* Phonapi */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
+		DBBFF82D1C97D58900956B99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RealmReact;
+			targetProxy = DBBFF82C1C97D58900956B99 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -724,6 +846,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Phonapi.app/Phonapi";
@@ -747,6 +870,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Phonapi.app/Phonapi";
@@ -765,6 +889,7 @@
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
+					"$(SRCROOT)/../node_modules/realm/**",
 				);
 				INFOPLIST_FILE = Phonapi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -784,6 +909,7 @@
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
+					"$(SRCROOT)/../node_modules/realm/**",
 				);
 				INFOPLIST_FILE = Phonapi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -833,8 +959,9 @@
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
+					"$(SRCROOT)/../node_modules/realm/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -876,8 +1003,9 @@
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
+					"$(SRCROOT)/../node_modules/realm/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

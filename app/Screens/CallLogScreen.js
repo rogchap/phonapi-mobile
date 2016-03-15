@@ -8,7 +8,7 @@ import React, {
   StyleSheet,
   SegmentedControlIOS,
 } from 'react-native';
-import RightToLeftCard from '../Navigation/RightToLeftCard';
+import RightToLeftCard from '../components/RightToLeftCard';
 import MenuButton from '../components/MenuButton';
 import Header from '../components/Header';
 

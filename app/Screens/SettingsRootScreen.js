@@ -10,7 +10,7 @@ import React, {
   Linking,
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
-import RightToLeftCard from '../Navigation/RightToLeftCard';
+import RightToLeftCard from '../components/RightToLeftCard';
 import Header from '../components/Header';
 import TextTableRow from '../components/TextTableRow';
 import Text from '../components/Text';

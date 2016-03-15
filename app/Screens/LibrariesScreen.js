@@ -7,7 +7,7 @@ import React, {
   WebView,
   StyleSheet,
 } from 'react-native';
-import RightToLeftCard from '../Navigation/RightToLeftCard';
+import RightToLeftCard from '../components/RightToLeftCard';
 import Header from '../components/Header';
 
 class LibrariesScreen extends Component {

@@ -16,7 +16,7 @@ import Drawer from 'react-native-drawer';
 import MenuPanel from '../components/MenuPanel';
 
 //TODO: move to container components
-import Screens from '../Screens';
+import Screens from '../screens';
 
 const {
   AnimatedView: NavigationAnimatedView,

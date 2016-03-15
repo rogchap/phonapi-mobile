@@ -8,7 +8,7 @@ import React, {
 } from 'react-native';
 import Button from 'react-native-button';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
-import RightToLeftCard from '../Navigation/RightToLeftCard';
+import RightToLeftCard from '../components/RightToLeftCard';
 import CtaButton from '../components/CtaButton';
 import TextInputField from '../components/TextInputField';
 import Logo from '../components/Logo';

@@ -12,7 +12,7 @@ import React, {
 } from 'react-native';
 import Button from 'react-native-button';
 import PageControl from 'react-native-page-control';
-import RightToLeftCard from '../Navigation/RightToLeftCard';
+import RightToLeftCard from '../components/RightToLeftCard';
 import StartButton from '../components/StartButton';
 import TextButton from '../components/TextButton';
 import Logo from '../components/Logo';

@@ -4,7 +4,7 @@ import React, {
   Text,
   StyleSheet,
 } from 'react-native';
-import RightToLeftCard from '../Navigation/RightToLeftCard';
+import RightToLeftCard from '../components/RightToLeftCard';
 
 class ConfirmPayScreen extends Component {
   render() {

@@ -8,7 +8,7 @@ import React, {
   StyleSheet,
 } from 'react-native';
 import CtaButton from '../components/CtaButton';
-import RightToLeftCard from '../Navigation/RightToLeftCard';
+import RightToLeftCard from '../components/RightToLeftCard';
 import { navigateReset } from '../actions/navigation';
 
 class WelcomeScreen extends Component {
