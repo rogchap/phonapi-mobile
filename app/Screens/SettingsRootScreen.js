@@ -11,9 +11,10 @@ import React, {
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
-import Header from '../Components/Header';
-import TextTableRow from '../Components/TextTableRow';
-import Text from '../Components/Text';
+import Header from '../components/Header';
+import TextTableRow from '../components/TextTableRow';
+import Text from '../components/Text';
+import { navigatePush, navigateReset } from '../actions/navigation';
 
 const version = __DEV__ ?  DeviceInfo.getReadableVersion() : DeviceInfo.getVersion();
 
@@ -21,6 +22,7 @@ class SettingsRootScreen extends Component {
   render() {
     // TODO Set app id for appstore rating
     const appStoreId = 545174222;
+    const { dispatch } = this.props;
     return (
       <View style={styles.base}>
         <ScrollView style={styles.scroll}>
@@ -59,7 +61,7 @@ class SettingsRootScreen extends Component {
           <View style={[styles.section, styles.sectionBottom]}>
             <TextTableRow
               rightText={version}
-              onPress={() => this.props.onNavigate({ key: 'About' })}
+              onPress={() => dispatch(navigatePush('About'))}
               top={true}>
               About
             </TextTableRow>
@@ -77,12 +79,13 @@ class SettingsRootScreen extends Component {
   }
 
   _signout() {
+    const { dispatch } = this.props;
     Alert.alert(
       'Sign out',
       'Are you sure you would like to sign out of [Organisation Name]?',
       [
         {text: 'Cancel', style:'cancel'},
-        {text: 'OK', onPress:() => this.props.onNavigate({ type: 'Reset', key: 'Info' })}
+        {text: 'OK', onPress:() => dispatch(navigateReset('Info'))}
       ]
     )
   }

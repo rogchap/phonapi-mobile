@@ -8,9 +8,9 @@ import React, {
   Dimensions,
 } from 'react-native';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
-import MenuButton from '../Components/MenuButton';
-import NoNumberView from '../Components/NoNumberView';
-import NumberPadView from '../Components/NumberPadView';
+import MenuButton from '../components/MenuButton';
+import NoNumberView from '../components/NoNumberView';
+import NumberPadView from '../components/NumberPadView';
 
 class HomeScreen extends Component {
 

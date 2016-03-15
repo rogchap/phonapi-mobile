@@ -13,9 +13,10 @@ import React, {
 import Button from 'react-native-button';
 import PageControl from 'react-native-page-control';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
-import StartButton from '../Components/StartButton';
-import TextButton from '../Components/TextButton';
-import Logo from '../Components/Logo';
+import StartButton from '../components/StartButton';
+import TextButton from '../components/TextButton';
+import Logo from '../components/Logo';
+import { navigatePush } from '../actions/navigation';
 
 const { width: pageWidth } = Dimensions.get('window');
 
@@ -28,6 +29,7 @@ class InfoScreen extends Component {
   }
 
   render() {
+    const { dispatch } = this.props;
     return (
       <Image source={require('../images/splash.png')} style={styles.bg}>
         <View style={styles.base}>
@@ -61,13 +63,13 @@ class InfoScreen extends Component {
           </View>
           <View style={styles.footer}>
             <StartButton
-              onPress={() => { this.props.onNavigate({ key: 'SignUp' }); }}>
+              onPress={() => { dispatch(navigatePush('SignUp')) }}>
               Get Started
             </StartButton>
             <TextButton
               style={styles.loginBtn}
               textStyle={styles.loginBtnText}
-              onPress={() => { this.props.onNavigate({ key: 'LogIn' }); }}>
+              onPress={() => { dispatch(navigatePush('LogIn')) }}>
               Already have an account?
             </TextButton>
           </View>

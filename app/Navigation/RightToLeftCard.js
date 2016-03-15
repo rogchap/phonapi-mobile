@@ -11,6 +11,7 @@ import React, {
   NavigationExperimental,
 } from 'react-native';
 import BackButton from './BackButton';
+import { navigateBack } from '../actions/navigation';
 
 const {
   Container: NavigationContainer,
@@ -32,13 +33,13 @@ type Layout = {
 };
 
 type Props = {
-  navigationState: NavigationParentState;
+  navState: NavigationParentState;
   index: number;
   position: Animated.Value;
   layout: Layout;
-  onNavigate: Function;
   enableGestures: bool;
   children: Object;
+  dispatch: Function;
 };
 
 class Card extends Component {
@@ -54,9 +55,10 @@ class Card extends Component {
     }
   }
   _enableGestures() {
+    const { dispatch } = this.props;
     this._responder = PanResponder.create({
       onMoveShouldSetPanResponder: (e, {dx, dy, moveX, moveY, x0, y0}) => {
-        if (this.props.navigationState.index === 0) {
+        if (this.props.navState.index === 0) {
           return false;
         }
         if (moveX > 30) {
@@ -70,7 +72,7 @@ class Card extends Component {
       onPanResponderGrant: (e, {dx, dy, moveX, moveY, x0, y0}) => {
       },
       onPanResponderMove: (e, {dx}) => {
-        const a = (-dx / this._lastWidth) + this.props.navigationState.index;
+        const a = (-dx / this._lastWidth) + this.props.navState.index;
         this.props.position.setValue(a);
       },
       onPanResponderRelease: (e, {vx, dx}) => {
@@ -78,16 +80,16 @@ class Card extends Component {
         const doesPop = (xRatio + vx) > 0.45;
         if (doesPop) {
           // todo: add an action which accepts velocity of the pop action/gesture, which is caught and used by NavigationAnimatedView
-          this.props.onNavigate(NavigationRootContainer.getBackAction());
+          dispatch(navigateBack());
           return;
         }
         Animated.spring(this.props.position, {
-          toValue: this.props.navigationState.index,
+          toValue: this.props.navState.index,
         }).start();
       },
       onPanResponderTerminate: (e, {vx, dx}) => {
         Animated.spring(this.props.position, {
-          toValue: this.props.navigationState.index,
+          toValue: this.props.navState.index,
         }).start();
       },
     });
@@ -107,7 +109,7 @@ class Card extends Component {
     this.props.layout.width.removeListener(this._widthListener);
     this.props.layout.height.removeListener(this._heightListener);
   }
-  render() {
+  render():Object {
     const cardPosition = Animated.add(this.props.position, new Animated.Value(-this.props.index));
     const gestureValue = Animated.multiply(cardPosition, this.props.layout.width);
     const touchResponderHandlers = this._responder ? this._responder.panHandlers : null;
@@ -127,14 +129,6 @@ class Card extends Component {
         style={[
           styles.card,
           {
-            /*right: gestureValue.interpolate({
-              inputRange: [-1, 0, 1],
-              outputRange: [-1, 0, 0.2],
-            }),
-            left: gestureValue.interpolate({
-              inputRange: [-1, 0, 1],
-              outputRange: [1, 0, -1],
-            }),*/
             transform: [
               {
                 translateX: gestureValue.interpolate({
@@ -152,41 +146,37 @@ class Card extends Component {
   }
 
   _onBackButtonPress() {
-    this.props.onNavigate({type: 'BackAction'});
+    this.props.dispatch(navigateBack());
   }
 }
 Card.defaultProps = {
   enableGestures: true,
   allowBack: true,
 }
-Card = NavigationContainer.create(Card);
 
 function createRightToLeftCard(Comp: Component, cardProps: Object = {}): Component {
   class RightToLeftCard extends Component {
     render() {
-      const { navigationState, index, position, layout, ...other } = this.props;
+      console.log('RightToLeftCard Props:', this.props);
+      const { navState, dispatch, index, position, layout, ...other } = this.props;
       return (
         <Card
-          navigationState={navigationState}
+          dispatch={dispatch}
+          navState={navState}
           index={index}
           position={position}
           layout={layout} {...cardProps} >
-          <Comp {...other} />
+          <Comp dispatch={dispatch} {...other} />
         </Card>
       );
     }
   }
-  RightToLeftCard = NavigationContainer.create(RightToLeftCard);
   return RightToLeftCard;
 }
 
 const styles = StyleSheet.create({
   card: {
     backgroundColor: 'transparent',
-    /*shadowColor: 'black',
-    shadowOpacity: 0.4,
-    shadowOffset: {width: 0, height: 0},
-    shadowRadius: 10,*/
     top: 0,
     bottom: 0,
     left: 0,

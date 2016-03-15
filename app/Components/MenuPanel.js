@@ -10,26 +10,28 @@ import React, {
 import { BlurView } from 'react-native-blur';
 import Button from 'react-native-button';
 import CloseButton from './CloseButton';
+import { navigatePush, navigateReset } from '../actions/navigation';
 
 class MenuPanel extends Component {
   render() {
+    const { onNavigate } = this.props;
     return (
       <BlurView blurType="dark" style={styles.base}>
         <View style={styles.spacer}></View>
         <View style={styles.container}>
           <Button
             style={styles.item}
-            onPress={() => { this.props.onNavigate({ type: 'Reset', key: 'Home' }); }}>
+            onPress={() => { onNavigate(navigateReset('Home')); }}>
             Keypad
           </Button>
           <Button
             style={styles.item}
-            onPress={() => { this.props.onNavigate({ type: 'Reset', key: 'CallLog' }); }}>
+            onPress={() => { onNavigate(navigateReset('CallLog')); }}>
             Call log
           </Button>
           <Button
             style={styles.item}
-            onPress={() => { this.props.onNavigate({ key: 'SettingsRoot' }); }}>
+            onPress={() => { onNavigate(navigatePush('SettingsRoot')); }}>
             Settings
           </Button>
         </View>

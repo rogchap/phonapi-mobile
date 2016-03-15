@@ -8,7 +8,7 @@ import React, {
   StyleSheet,
 } from 'react-native';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
-import Header from '../Components/Header';
+import Header from '../components/Header';
 
 class PrivacyScreen extends Component {
   render() {

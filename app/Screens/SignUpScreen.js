@@ -11,9 +11,10 @@ import React, {
 import Button from 'react-native-button';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
-import CtaButton from '../Components/CtaButton';
-import TextInputField from '../Components/TextInputField';
-import Logo from '../Components/Logo';
+import CtaButton from '../components/CtaButton';
+import TextInputField from '../components/TextInputField';
+import Logo from '../components/Logo';
+import { navigatePush } from '../actions/navigation';
 
 class SignUpScreen extends Component {
   _nameTextInputField;
@@ -63,7 +64,7 @@ class SignUpScreen extends Component {
 
   _onCtaButtonPress() {
     this._blurInputs();
-    this.props.onNavigate({ key: 'Organisation' });
+    this.props.dispatch(navigatePush('Organisation'));
   }
 }
 

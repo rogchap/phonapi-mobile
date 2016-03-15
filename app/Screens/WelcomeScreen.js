@@ -7,11 +7,13 @@ import React, {
   Text,
   StyleSheet,
 } from 'react-native';
-import CtaButton from '../Components/CtaButton';
+import CtaButton from '../components/CtaButton';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
+import { navigateReset } from '../actions/navigation';
 
 class WelcomeScreen extends Component {
   render() {
+    const { dispatch } = this.props;
     return (
       <View style={styles.base}>
         <View style={styles.content}>
@@ -20,7 +22,7 @@ class WelcomeScreen extends Component {
           <Text style={styles.text}>is ready to start using Phonapi</Text>
         </View>
         <View style={styles.cta}>
-          <CtaButton onPress={() => {this.props.onNavigate({ type: 'Reset', key: 'Home' })}}>
+          <CtaButton onPress={() => {dispatch(navigateReset('Home'))}}>
             Done
           </CtaButton>
         </View>

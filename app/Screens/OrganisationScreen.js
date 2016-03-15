@@ -9,10 +9,11 @@ import React, {
 } from 'react-native';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
-import CtaButton from '../Components/CtaButton';
-import Logo from '../Components/Logo';
-import TextInputField from '../Components/TextInputField';
-import Hairline from '../Components/Hairline';
+import CtaButton from '../components/CtaButton';
+import Logo from '../components/Logo';
+import TextInputField from '../components/TextInputField';
+import Hairline from '../components/Hairline';
+import { navigatePush } from '../actions/navigation';
 
 class OrganisationScreen extends Component {
   _organisationTextInputField;
@@ -64,7 +65,7 @@ class OrganisationScreen extends Component {
 
   _onCtaButtonPress() {
     this._blurInputs();
-    this.props.onNavigate({ key: 'Welcome' });
+    this.props.dispatch(navigatePush('Welcome'));
   }
 }
 

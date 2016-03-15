@@ -13,6 +13,10 @@
     "react-native-drawer": "^1.16.7",
     "react-native-keyboard-spacer": "^0.1.4",
     "react-native-linear-gradient": "^1.5.2",
-    "react-native-page-control": "^1.0.5"
+    "react-native-page-control": "^1.0.5",
+    "react-redux": "^4.4.1",
+    "redux": "^3.3.1",
+    "redux-persist": "^2.0.1",
+    "redux-thunk": "^2.0.1"
   }
 }

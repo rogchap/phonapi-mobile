@@ -8,13 +8,15 @@ import React, {
   StyleSheet,
 } from 'react-native';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
-import Header from '../Components/Header';
-import TextTableRow from '../Components/TextTableRow';
-import Text from '../Components/Text';
+import Header from '../components/Header';
+import TextTableRow from '../components/TextTableRow';
+import Text from '../components/Text';
+import { navigatePush } from '../actions/navigation';
 
 class AboutScreen extends Component {
   render() {
     //TODO Set correct URL for Rogchap Software link
+    const { dispatch } = this.props;
     return (
       <View style={styles.base}>
         <ScrollView style={styles.scroll}>
@@ -22,10 +24,10 @@ class AboutScreen extends Component {
             <TextTableRow top={true}>
               Libraries we use
             </TextTableRow>
-            <TextTableRow onPress={() => this.props.onNavigate({ key: 'Terms' })}>
+            <TextTableRow onPress={() => dispatch(navigatePush('Terms'))}>
               Terms of service
             </TextTableRow>
-            <TextTableRow  onPress={() => this.props.onNavigate({ key: 'Privacy' })}>
+            <TextTableRow  onPress={() => dispatch(navigatePush('Privacy'))}>
               Privacy policy
             </TextTableRow>
           </View>

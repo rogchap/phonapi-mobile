@@ -9,8 +9,8 @@ import React, {
   SegmentedControlIOS,
 } from 'react-native';
 import RightToLeftCard from '../Navigation/RightToLeftCard';
-import MenuButton from '../Components/MenuButton';
-import Header from '../Components/Header';
+import MenuButton from '../components/MenuButton';
+import Header from '../components/Header';
 
 class CallLogScreen extends Component {
   render() {

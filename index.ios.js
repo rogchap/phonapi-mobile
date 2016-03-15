@@ -4,6 +4,6 @@
 import React, {
   AppRegistry,
 } from 'react-native';
-import Phonapi from './app/Phonapi';
+import App from './app/containers/App';
 
-AppRegistry.registerComponent('Phonapi', () => Phonapi);
+AppRegistry.registerComponent('Phonapi', () => App);
