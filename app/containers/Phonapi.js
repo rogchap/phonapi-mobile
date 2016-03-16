@@ -39,6 +39,10 @@ class Phonapi extends Component {
             type="overlay"
             ref={drawer => this.drawer = drawer}
             content={<MenuPanel onNavigate={action => { this.drawer.close(); dispatch(action); }} />}
+            negotiatePan={true}
+            panCloseMask={45}
+            panOpenMask={45}
+            captureGestures={false}
             disabled={this._drawerIsDisabled(currentKey)}
             onOpenStart={this._drawerOnOpen.bind(this)}
             onClose={this._drawerOnClose.bind(this)}>

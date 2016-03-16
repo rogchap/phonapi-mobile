@@ -13,7 +13,7 @@ class DropdownButton extends Component {
     const { onPress } = this.props;
 
     return (
-      <TouchableOpacity onPress={()=> {}}>
+      <TouchableOpacity onPress={onPress}>
         <View style={styles.base}>
           <View>
             <Text>{this.props.children}</Text>

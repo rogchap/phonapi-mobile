@@ -6,21 +6,32 @@ import React, {
   StyleSheet,
   Dimensions,
 } from 'react-native';
-import DropdownButton from './DropdownButton';
-import NumberPad from './NumberPad';
-import ImageButton from './ImageButton';
-import CallButton from './CallButton';
-import Text from './Text';
+import {connect} from 'react-redux';
+
+import DropdownButton from '../components/DropdownButton';
+import NumberPad from '../components/NumberPad';
+import ImageButton from '../components/ImageButton';
+import CallButton from '../components/CallButton';
+import Text from '../components/Text';
+import DialCodePicker from '../components/DialCodePicker';
+import CountryList from '../constants/CountryList';
+import { shouldShowDialCodePicker, changeCountryCode } from '../actions/callPad';
 
 const { width: pageWidth } = Dimensions.get('window');
 
 class NumberPadView extends Component {
+
   render() {
+    const { countryCode, showDialCodePicker, dispatch } = this.props;
+    const country = CountryList.find(c => c.code == countryCode);
     return (
      <View style={styles.base}>
        <View style={styles.input}>
          <View>
-           <DropdownButton>+61</DropdownButton>
+           <DropdownButton
+             onPress={() => dispatch(shouldShowDialCodePicker(true))}>
+             {country.dialCode}
+           </DropdownButton>
            <View style={styles.inputLine}>
              <Text
                style={styles.inputText}
@@ -41,6 +52,12 @@ class NumberPadView extends Component {
        <View style={styles.cta}>
          <CallButton />
        </View>
+       {showDialCodePicker
+         ? <DialCodePicker
+            onClose={()=> dispatch(shouldShowDialCodePicker(false))}
+            onValueChange={itemValue => dispatch(changeCountryCode(itemValue))}
+            selectedValue={countryCode} />
+         : null}
      </View>
     );
   }
@@ -83,5 +100,11 @@ const styles = StyleSheet.create({
   },
 });
 
+function mapStateToProps(state) {
+  const { callPad } = state;
+  return {
+    ...callPad,
+  };
+}
 
-export default NumberPadView;
+export default connect(mapStateToProps)(NumberPadView);

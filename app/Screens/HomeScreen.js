@@ -7,10 +7,11 @@ import React, {
   StyleSheet,
   Dimensions,
 } from 'react-native';
+
 import RightToLeftCard from '../components/RightToLeftCard';
 import MenuButton from '../components/MenuButton';
 import NoNumberView from '../components/NoNumberView';
-import NumberPadView from '../components/NumberPadView';
+import NumberPadView from '../containers/NumberPadView';
 
 class HomeScreen extends Component {
 
