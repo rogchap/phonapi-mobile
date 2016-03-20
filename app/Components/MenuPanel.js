@@ -6,6 +6,7 @@ import React, {
   StyleSheet,
   View,
   Text,
+  AsyncStorage,
 } from 'react-native';
 import { BlurView } from 'react-native-blur';
 import Button from 'react-native-button';
@@ -34,6 +35,7 @@ class MenuPanel extends Component {
             onPress={() => { onNavigate(navigatePush('SettingsRoot')); }}>
             Settings
           </Button>
+          {__DEV__ ? <Button onPress={() => AsyncStorage.clear()}>dev: Clear state store</Button> : null}
         </View>
         <View style={styles.spacer}></View>
         <CloseButton

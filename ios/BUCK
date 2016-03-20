@@ -1,0 +1,41 @@
+apple_bundle(
+  name = 'Phonapi',
+  binary = ':PhonapiBinary',
+  extension = 'app',
+  info_plist = 'Phonapi/Info.plist',
+  tests = [':PhonapiTest'],
+)
+
+apple_binary(
+  name = 'PhonapiBinary',
+  linker_flags= ['-ObjC'],
+  headers = glob([
+    'Phonapi/*.h',
+
+  ]),
+  srcs = glob([
+    'Phonapi/*.m',
+  ]),
+  frameworks = [
+    '$SDKROOT/System/Library/Frameworks/UIKit.framework',
+    '$SDKROOT/System/Library/Frameworks/Foundation.framework',
+  ],
+)
+
+apple_package(
+  name = 'PhonapiPackage',
+  bundle = ':Phonapi',
+)
+
+apple_test(
+  name = 'PhonapiTest',
+  extension = 'xctest',
+  test_host_app = ':Phonapi',
+  srcs = ['PhonapiTests/PhonapiTests.m'],
+  info_plist = 'PhonapiTests/Info.plist',
+  frameworks = [
+    '$SDKROOT/System/Library/Frameworks/Foundation.framework',
+    '$PLATFORM_DIR/Developer/Library/Frameworks/XCTest.framework',
+    '$SDKROOT/System/Library/Frameworks/UIKit.framework',
+  ],
+)

@@ -5,6 +5,8 @@ import * as types from '../constants/ActionTypes';
 
 type Action = {
   type?: string,
+  code?: string,
+  show?: boolean,
 }
 
 const initialState = {

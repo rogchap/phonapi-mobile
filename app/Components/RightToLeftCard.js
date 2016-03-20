@@ -23,7 +23,7 @@ const ENABLE_GESTURES = Platform.OS !== 'android';
 
 import type {
   NavigationParentState
-} from 'NavigationStateUtils'; 
+} from 'NavigationStateUtils';
 
 type Layout = {
   initWidth: number,
@@ -157,7 +157,6 @@ Card.defaultProps = {
 function createRightToLeftCard(Comp: Component, cardProps: Object = {}): Component {
   class RightToLeftCard extends Component {
     render() {
-      console.log('RightToLeftCard Props:', this.props);
       const { navState, dispatch, index, position, layout, ...other } = this.props;
       return (
         <Card

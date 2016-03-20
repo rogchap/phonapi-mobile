@@ -1,3 +1,6 @@
+/* @flow */
+'use strict';
+
 import React, {
   Component,
   View,
@@ -15,21 +18,24 @@ class ImageButton extends Component {
       React.PropTypes.string,
       React.PropTypes.number,
     ]),
+    disabled: React.PropTypes.bool,
   };
 
   render() {
-    const { style, source, onPress } = this.props;
+    const { style, disabled, source, onPress } = this.props;
 
     return (
-      <TouchableOpacity style={style} onPress={onPress}>
-        <Image source={source} />
+      <TouchableOpacity style={style} onPress={disabled ? null : onPress}>
+        <Image source={source} style={disabled && styles.disabled} />
       </TouchableOpacity>
     );
   }
 }
 
 const styles = StyleSheet.create({
-
+  disabled: {
+    opacity: 0.25,
+  },
 });
 
 export default ImageButton;

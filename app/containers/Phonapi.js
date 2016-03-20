@@ -4,15 +4,17 @@
 import React, {
   Component,
   StyleSheet,
-  View,
+  View, Text,
   Image,
   NavigationExperimental,
   StatusBar,
 } from 'react-native';
 import invariant from 'invariant';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import Drawer from 'react-native-drawer';
 
+import * as callStates from '../constants/CallStates';
+import OnCallContainer from '../containers/OnCallContainer';
 import MenuPanel from '../components/MenuPanel';
 
 //TODO: move to container components
@@ -30,7 +32,7 @@ class Phonapi extends Component {
   }
 
   render() {
-    const { navState, dispatch } = this.props;
+    const { navState, callState, dispatch } = this.props;
     const currentKey = navState.children[navState.index].key;
     return (
       <Image source={require('../images/bg.png')} style={styles.bg}>
@@ -58,6 +60,7 @@ class Phonapi extends Component {
                   return <Comp {...props} />;
                 }}
               />
+            { callState !== callStates.IDLE ? <OnCallContainer /> : null }
           </Drawer>
         </View>
       </Image>
@@ -65,8 +68,10 @@ class Phonapi extends Component {
   }
 
   _drawerIsDisabled(key: string): boolean {
+    const { callState } = this.props;
     return key !== 'Home'
-        && key !== 'CallLog';
+        && key !== 'CallLog'
+        && callState !== callStates.IDLE;
   }
 
   _drawerOnOpen():void {
@@ -88,10 +93,11 @@ const styles = StyleSheet.create({
 });
 
 function mapStateToProps(state) {
-  const { navigation } = state;
+  const { navigation, onCall } = state;
 
   return {
-    navState: navigation
+    navState: navigation,
+    callState: onCall.callState,
   };
 }
 

@@ -2,6 +2,11 @@
 #
 .DS_Store
 
+# Buck
+.buckd
+buck-cache
+buck-out
+
 # Xcode
 #
 build/

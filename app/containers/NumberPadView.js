@@ -16,6 +16,7 @@ import Text from '../components/Text';
 import DialCodePicker from '../components/DialCodePicker';
 import CountryList from '../constants/CountryList';
 import { shouldShowDialCodePicker, changeCountryCode } from '../actions/callPad';
+import { dealWithIncomingCall } from '../actions/onCall';
 
 const { width: pageWidth } = Dimensions.get('window');
 
@@ -50,7 +51,7 @@ class NumberPadView extends Component {
          <NumberPad />
        </View>
        <View style={styles.cta}>
-         <CallButton />
+         <CallButton onPress={() => dispatch(dealWithIncomingCall())} />
        </View>
        {showDialCodePicker
          ? <DialCodePicker

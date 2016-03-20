@@ -27,7 +27,10 @@ const store = createStoreWithMiddleware(reducer);
 
 export default class App extends Component {
   componentWillMount() {
-    persistStore(store, {storage: AsyncStorage});
+    persistStore(store, {
+      storage: AsyncStorage,
+      blacklist: ['onCall']
+    });
   }
 
   render() {

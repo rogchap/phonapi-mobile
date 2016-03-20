@@ -5,6 +5,7 @@ import * as types from '../constants/ActionTypes';
 
 type Action = {
   type?: string,
+  key?: string,
 }
 
 const initialState = {

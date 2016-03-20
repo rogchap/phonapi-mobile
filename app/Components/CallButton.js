@@ -3,6 +3,7 @@ import React, {
   View,
   Image,
   StyleSheet,
+  Animated,
   TouchableHighlight,
 } from 'react-native';
 
@@ -12,14 +13,14 @@ class CallButton extends Component {
   };
 
   render() {
-    const { tintColor } = this.props;
+    const { tintColor, disabled, onPress } = this.props;
     return (
       <TouchableHighlight
         style={styles.onPress}
         underlayColor="rgba(0,0,0,0.5)"
-        onPress={()=> {}}>
-        <View style={styles.base}>
-          <Image
+        onPress={disabled ? null : onPress}>
+        <View style={[styles.base, disabled && styles.disabled ]}>
+          <Animated.Image
             style={[styles.image, {tintColor}]}
             source={require('../images/call.png')}
             resizeMode="cover"/>
@@ -37,6 +38,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,255,255,0.25)',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  disabled: {
+    opacity: 0.25,
   },
   onPress: {
     borderRadius: 45,
