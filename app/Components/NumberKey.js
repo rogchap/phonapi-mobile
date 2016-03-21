@@ -8,13 +8,15 @@ import React, {
 
 class NumberKey extends Component {
   render() {
-    const { text } = this.props;
+    const { text, disabled, onPress, onLongPress } = this.props;
 
     return (
       <TouchableHighlight
         style={styles.onPress}
         underlayColor="rgba(255,255,255,0.5)"
-        onPress={()=> {}}>
+        delayPressIn={0}
+        onPressIn={disabled ? null : onPress}
+        onLongPress={disabled ? null : onLongPress}>
         <View style={styles.base}>
           <Text style={styles.text}>{text}</Text>
         </View>

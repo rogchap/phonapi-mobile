@@ -15,7 +15,8 @@ import CallButton from '../components/CallButton';
 import Text from '../components/Text';
 import DialCodePicker from '../components/DialCodePicker';
 import CountryList from '../constants/CountryList';
-import { shouldShowDialCodePicker, changeCountryCode } from '../actions/callPad';
+import { shouldShowDialCodePicker, changeCountryCode,
+  addDigit, removeLastDigit, changeLastDigitTo, clear } from '../actions/callPad';
 import { dealWithIncomingCall } from '../actions/onCall';
 
 const { width: pageWidth } = Dimensions.get('window');
@@ -23,8 +24,9 @@ const { width: pageWidth } = Dimensions.get('window');
 class NumberPadView extends Component {
 
   render() {
-    const { countryCode, showDialCodePicker, dispatch } = this.props;
+    const { countryCode, showDialCodePicker, numberToDial, dispatch } = this.props;
     const country = CountryList.find(c => c.code == countryCode);
+    const hasNumber = !!numberToDial && numberToDial.length > 0;
     return (
      <View style={styles.base}>
        <View style={styles.input}>
@@ -37,9 +39,14 @@ class NumberPadView extends Component {
              <Text
                style={styles.inputText}
                numberOfLines={1}>
-               0420 616 054
+               {numberToDial}
              </Text>
-             <ImageButton source={require('../images/backspace.png')} />
+             {hasNumber ?
+              <ImageButton
+                onPress={() => dispatch(removeLastDigit())}
+                onLongPress={() => dispatch(clear())}
+                source={require('../images/backspace.png')} />  : null}
+
            </View>
            <View style={styles.from}>
              <Text>FROM </Text>
@@ -48,7 +55,9 @@ class NumberPadView extends Component {
          </View>
        </View>
        <View style={styles.numberPad}>
-         <NumberPad />
+         <NumberPad
+           onPress={key => dispatch(addDigit(key))}
+           onLongPress={key => dispatch(changeLastDigitTo(key))} />
        </View>
        <View style={styles.cta}>
          <CallButton onPress={() => dispatch(dealWithIncomingCall())} />
@@ -84,6 +93,7 @@ const styles = StyleSheet.create({
   inputText: {
     fontSize: 34,
     width: pageWidth - 120 - 45,
+    height: 40,
   },
   from: {
     flexDirection: 'row',

@@ -14,6 +14,7 @@ class ImageButton extends Component {
   static propTypes = {
     style: View.propTypes.style,
     onPress: React.PropTypes.func,
+    onLongPress: React.PropTypes.func,
     source: React.PropTypes.oneOfType([
       React.PropTypes.string,
       React.PropTypes.number,
@@ -22,13 +23,14 @@ class ImageButton extends Component {
   };
 
   render() {
-    const { style, disabled, source, onPress } = this.props;
+    const { style, disabled, source, onPress, onLongPress } = this.props;
 
     return (
       <TouchableOpacity
         style={style}
         activeOpacity={disabled ? 1 : 0.2}
-        onPress={disabled ? null : onPress}>
+        onPress={disabled ? null : onPress}
+        onLongPress={disabled ? null : onLongPress}>
         <Image source={source} style={disabled && styles.disabled} />
       </TouchableOpacity>
     );
