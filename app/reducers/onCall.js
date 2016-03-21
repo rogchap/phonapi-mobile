@@ -6,13 +6,16 @@ import * as callStates from '../constants/CallStates';
 
 type Action = {
   type?: string,
+  mute?: boolean,
+  speaker?: boolean,
+  show?: boolean,
 }
 
 const initialState = {
   callState: callStates.IDLE,
   mute: false,
   speaker: false,
-  showKeyboard: false,
+  showKeypad: false,
 }
 
 export default function onCall(state:Object = initialState, action:Action = {}): Object {
@@ -21,6 +24,9 @@ export default function onCall(state:Object = initialState, action:Action = {}):
       return {
         ...state,
         callState: callStates.INCOMING,
+        mute: false,
+        speaker: false,
+        showKeypad: false,
       }
     case types.ACCEPT_INCOMING_CALL:
       return {
@@ -41,6 +47,21 @@ export default function onCall(state:Object = initialState, action:Action = {}):
       return {
         ...state,
         callState: callStates.IDLE,
+      }
+    case types.MUTE_MICROPHONE:
+      return {
+        ...state,
+        mute: action.mute,
+      }
+    case types.USE_LOUD_SPEAKER:
+      return {
+        ...state,
+        speaker: action.speaker,
+      }
+    case types.SHOW_ONCALL_KEYPAD:
+      return {
+        ...state,
+        showKeypad: action.show,
       }
     default:
       return state;

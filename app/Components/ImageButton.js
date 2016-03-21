@@ -25,7 +25,10 @@ class ImageButton extends Component {
     const { style, disabled, source, onPress } = this.props;
 
     return (
-      <TouchableOpacity style={style} onPress={disabled ? null : onPress}>
+      <TouchableOpacity
+        style={style}
+        activeOpacity={disabled ? 1 : 0.2}
+        onPress={disabled ? null : onPress}>
         <Image source={source} style={disabled && styles.disabled} />
       </TouchableOpacity>
     );

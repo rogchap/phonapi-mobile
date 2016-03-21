@@ -60,8 +60,8 @@ class Phonapi extends Component {
                   return <Comp {...props} />;
                 }}
               />
-            { callState !== callStates.IDLE ? <OnCallContainer /> : null }
           </Drawer>
+          { callState !== callStates.IDLE ? <OnCallContainer /> : null }
         </View>
       </Image>
     );

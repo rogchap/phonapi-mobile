@@ -12,7 +12,16 @@ import { connect } from 'react-redux';
 
 import OnCallButtons from '../components/OnCallButtons';
 import OnCallActions from '../components/OnCallActions';
-import { declineCall, closeCallDialog, acceptCall, endCall } from '../actions/onCall';
+import OnCallDetails from '../components/OnCallDetails';
+import {
+  declineCall,
+  closeCallDialog,
+  acceptCall,
+  endCall,
+  setMute,
+  enableSpeaker,
+  showOnCallKeypad,
+} from '../actions/onCall';
 import * as callStates from '../constants/CallStates';
 
 class OnCallContainer extends Component {
@@ -44,14 +53,25 @@ class OnCallContainer extends Component {
 
   render(): ReactElement {
     const { position } = this.state;
-    const { callState, dispatch } = this.props;
+    const { callState, mute, speaker, showKeypad, dispatch } = this.props;
     return (
       <Animated.View style={[styles.base, {opacity: position}]}>
         <Image source={require('../images/bg.png')} style={styles.bg}>
           <View style={styles.content}>
-            <View style={styles.details}></View>
+            <View style={styles.details}>
+              <OnCallDetails
+                callState={callState} />
+            </View>
             <View style={styles.actions}>
-              <OnCallActions callState={callState} />
+              <OnCallActions
+                callState={callState}
+                mute={mute}
+                speaker={speaker}
+                showKeypad={showKeypad}
+                onMutePress={() => dispatch(setMute(!mute))}
+                onSpeakerPress={() => dispatch(enableSpeaker(!speaker))}
+                onKeyPadPress={() => dispatch(showOnCallKeypad(true))}
+                onKeyPadClosePress={() => dispatch(showOnCallKeypad(false))} />
             </View>
             <View style={styles.callButtons}>
               <OnCallButtons
@@ -88,9 +108,12 @@ const styles = StyleSheet.create({
   },
   details: {
     flex: 1,
+    justifyContent: 'center',
+    paddingLeft: 30,
+    paddingRight: 30,
   },
   actions: {
-    flex: 2,
+    flex: 2.5,
     justifyContent: 'center',
     paddingLeft: 30,
     paddingRight: 30,
