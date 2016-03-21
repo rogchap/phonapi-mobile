@@ -25,6 +25,7 @@ import {
 import * as callStates from '../constants/CallStates';
 
 class OnCallContainer extends Component {
+  state: any;
   constructor(props: any) {
     super(props);
     this.state = {

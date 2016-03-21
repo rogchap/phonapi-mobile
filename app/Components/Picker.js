@@ -12,7 +12,8 @@ import { BlurView } from 'react-native-blur';
 
 const { Picker: RNPicker } = React;
 
-class Picker extends Component {
+class Picker extends Component<any, any, any> {
+  state: any;
   constructor(props: any) {
     super(props);
     this.state = {
@@ -30,7 +31,7 @@ class Picker extends Component {
   render() {
     const { position } = this.state;
     const { onClose, ...other } = this.props;
-    
+
     return (
       <View style={styles.base}>
         <TouchableWithoutFeedback onPress={this._beginClose.bind(this)}>

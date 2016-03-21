@@ -14,7 +14,7 @@ import NumberPad from './NumberPad';
 import TextButton from './TextButton';
 import * as callStates from '../constants/CallStates';
 
-class OnCallActions extends Component {
+class OnCallActions extends Component<any, any, any> {
   constructor(props: any) {
     super(props);
     this.state = {

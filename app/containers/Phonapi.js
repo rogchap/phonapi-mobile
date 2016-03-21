@@ -25,7 +25,7 @@ const {
 } = NavigationExperimental;
 
 class Phonapi extends Component {
-
+  drawer: any;
   componentWillMount() {
     StatusBar.setBarStyle('light-content');
     StatusBar.setHidden(false);
@@ -34,6 +34,7 @@ class Phonapi extends Component {
   render() {
     const { navState, callState, dispatch } = this.props;
     const currentKey = navState.children[navState.index].key;
+    console.log(currentKey, navState);
     return (
       <Image source={require('../images/bg.png')} style={styles.bg}>
         <View style={{ flex:1 }}>
@@ -52,12 +53,14 @@ class Phonapi extends Component {
                 key={navState.children[0].key + '_flow'}
                 style={{ flex: 1 }}
                 navigationState={navState}
-                renderScene={(child, index, position, layout) => {
-                  invariant(Screens[child.key],
-                    `No Screen with key: ${child.key}. Have you defined it in Screens/index.js?`);
-                  const Comp = Screens[child.key];
-                  const props = { key:child.key, navState, index, position, layout, dispatch }
-                  return <Comp {...props} />;
+                onNavigate={()=>{}}
+                renderScene={props => {
+                  const key = props.scene.navigationState.key;
+                  invariant(Screens[key],
+                    `No Screen with key: ${key}. Have you defined it in Screens/index.js?`);
+                  const Comp = Screens[key];
+                  const sceneProps = { key, ...props, dispatch }
+                  return <Comp {...sceneProps} />;
                 }}
               />
           </Drawer>
@@ -68,10 +71,8 @@ class Phonapi extends Component {
   }
 
   _drawerIsDisabled(key: string): boolean {
-    const { callState } = this.props;
     return key !== 'Home'
-        && key !== 'CallLog'
-        && callState !== callStates.IDLE;
+        && key !== 'CallLog';
   }
 
   _drawerOnOpen():void {

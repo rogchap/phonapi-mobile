@@ -13,6 +13,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* PhonapiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PhonapiTests.m */; };
+		0C51CE60FD774DE2AB96758F /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C64CA145C141A79EC68F1F /* libBVLinearGradient.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -21,18 +22,14 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		256FB31191A141D0AFBC94C8 /* libRNBlur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE65A5F807B45319DC9FAE7 /* libRNBlur.a */; };
-		345616A1AA9E472689E991B0 /* ReactTests.app in Frameworks */ = {isa = PBXBuildFile; fileRef = A636ABEB416B4C539F33FAA8 /* ReactTests.app */; };
-		78CCA77BB782428AAE57B85B /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17506A40B05D4D839AC49FAB /* libBVLinearGradient.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		B7F06EF630234E7AB42C0CAC /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2BEC3FE7ED4320859026BD /* libRNDeviceInfo.a */; };
-		DB805AC91C91969700A043E2 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		DB9E29971C8D9BCF002FE7F9 /* ProximaNova-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB9E29931C8D9BCF002FE7F9 /* ProximaNova-Black.otf */; };
-		DB9E29981C8D9BCF002FE7F9 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB9E29941C8D9BCF002FE7F9 /* ProximaNova-Bold.otf */; };
-		DB9E29991C8D9BCF002FE7F9 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB9E29951C8D9BCF002FE7F9 /* ProximaNova-Light.otf */; };
-		DB9E299A1C8D9BCF002FE7F9 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB9E29961C8D9BCF002FE7F9 /* ProximaNova-Regular.otf */; };
-		DBBFF82A1C97D58900956B99 /* RealmReact.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFF8271C97D4FE00956B99 /* RealmReact.framework */; };
-		DBBFF82B1C97D58900956B99 /* RealmReact.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFF8271C97D4FE00956B99 /* RealmReact.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F02258427C74C2EB53D3B39 /* libRNBlur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B082E7F425C847748C8D0992 /* libRNBlur.a */; };
+		B6903B99F80B46D9BF443909 /* ReactTests.app in Frameworks */ = {isa = PBXBuildFile; fileRef = FDDB3FE817A5469995622A65 /* ReactTests.app */; };
+		D7C13989B2F048B4B1D78623 /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 343E1A838658487B92A3CF4B /* libRNDeviceInfo.a */; };
+		DB6CD6751CA021F70017F3B9 /* ProximaNova-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB6CD6711CA021F70017F3B9 /* ProximaNova-Black.otf */; };
+		DB6CD6761CA021F70017F3B9 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB6CD6721CA021F70017F3B9 /* ProximaNova-Bold.otf */; };
+		DB6CD6771CA021F70017F3B9 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB6CD6731CA021F70017F3B9 /* ProximaNova-Light.otf */; };
+		DB6CD6781CA021F70017F3B9 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB6CD6741CA021F70017F3B9 /* ProximaNova-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,84 +110,63 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
-		DB1ADA6D1C942C14006A479C /* PBXContainerItemProxy */ = {
+		DB6CD6531CA017AC0017F3B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 83486D44D0CD461D9DA8E41C /* RNDeviceInfo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DA5891D81BA9A9FC002B4DB2;
-			remoteInfo = RNDeviceInfo;
-		};
-		DB9E297B1C8D9AB6002FE7F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8D1671783FEF480D9BEC3318 /* BVLinearGradient.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = BVLinearGradient;
-		};
-		DB9E29881C8D9AB6002FE7F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9F0FB5ECF580423D99ADF781 /* RNBlur.xcodeproj */;
+			containerPortal = 60C093BB80D5482593AF6D02 /* RNBlur.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A68BD7BC1BC31318005F02DF;
 			remoteInfo = RNBlur;
 		};
-		DBBFF81E1C97D4FE00956B99 /* PBXContainerItemProxy */ = {
+		DB6CD6581CA017AC0017F3B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */;
+			containerPortal = 358FB76794FF488BB445EDC4 /* RNDeviceInfo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DA5891D81BA9A9FC002B4DB2;
+			remoteInfo = RNDeviceInfo;
+		};
+		DB6CD65D1CA017AC0017F3B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A426A55C2964FD3ADE27E4E /* BVLinearGradient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = BVLinearGradient;
+		};
+		DB6CD6661CA017AC0017F3B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4E129E634F3453083BCFFA1 /* RealmJS.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F63FF2F01C16405C00B3B8E0;
 			remoteInfo = GCDWebServers;
 		};
-		DBBFF8201C97D4FE00956B99 /* PBXContainerItemProxy */ = {
+		DB6CD6681CA017AC0017F3B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */;
+			containerPortal = F4E129E634F3453083BCFFA1 /* RealmJS.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F63FF2B11C1241E500B3B8E0;
 			remoteInfo = "RealmJS static";
 		};
-		DBBFF8221C97D4FE00956B99 /* PBXContainerItemProxy */ = {
+		DB6CD66A1CA017AC0017F3B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */;
+			containerPortal = F4E129E634F3453083BCFFA1 /* RealmJS.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 02B58CB11AE99CEC009B348C;
 			remoteInfo = RealmJS;
 		};
-		DBBFF8241C97D4FE00956B99 /* PBXContainerItemProxy */ = {
+		DB6CD66C1CA017AC0017F3B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */;
+			containerPortal = F4E129E634F3453083BCFFA1 /* RealmJS.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 02B58CBC1AE99CEC009B348C;
 			remoteInfo = RealmJSTests;
 		};
-		DBBFF8261C97D4FE00956B99 /* PBXContainerItemProxy */ = {
+		DB6CD66E1CA017AC0017F3B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */;
+			containerPortal = F4E129E634F3453083BCFFA1 /* RealmJS.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 02B29A161B7CF7C9008A7E6B;
 			remoteInfo = RealmReact;
 		};
-		DBBFF82C1C97D58900956B99 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 02B29A151B7CF7C9008A7E6B;
-			remoteInfo = RealmReact;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		DBBFF82E1C97D58900956B99 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				DBBFF82B1C97D58900956B99 /* RealmReact.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -212,20 +188,20 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Phonapi/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Phonapi/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		17506A40B05D4D839AC49FAB /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
-		48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmJS.xcodeproj; path = ../node_modules/realm/RealmJS.xcodeproj; sourceTree = "<group>"; };
+		343E1A838658487B92A3CF4B /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
+		358FB76794FF488BB445EDC4 /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
+		4A426A55C2964FD3ADE27E4E /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
+		60C093BB80D5482593AF6D02 /* RNBlur.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNBlur.xcodeproj; path = "../node_modules/react-native-blur/ios/RNBlur.xcodeproj"; sourceTree = "<group>"; };
+		70C64CA145C141A79EC68F1F /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		83486D44D0CD461D9DA8E41C /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
-		8C2BEC3FE7ED4320859026BD /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
-		8D1671783FEF480D9BEC3318 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
-		8EE65A5F807B45319DC9FAE7 /* libRNBlur.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNBlur.a; sourceTree = "<group>"; };
-		9F0FB5ECF580423D99ADF781 /* RNBlur.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNBlur.xcodeproj; path = "../node_modules/react-native-blur/ios/RNBlur.xcodeproj"; sourceTree = "<group>"; };
-		A636ABEB416B4C539F33FAA8 /* ReactTests.app */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ReactTests.app; sourceTree = "<group>"; };
-		DB9E29931C8D9BCF002FE7F9 /* ProximaNova-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Black.otf"; path = "Phonapi/ProximaNova-Black.otf"; sourceTree = "<group>"; };
-		DB9E29941C8D9BCF002FE7F9 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Bold.otf"; path = "Phonapi/ProximaNova-Bold.otf"; sourceTree = "<group>"; };
-		DB9E29951C8D9BCF002FE7F9 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Light.otf"; path = "Phonapi/ProximaNova-Light.otf"; sourceTree = "<group>"; };
-		DB9E29961C8D9BCF002FE7F9 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Regular.otf"; path = "Phonapi/ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		B082E7F425C847748C8D0992 /* libRNBlur.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNBlur.a; sourceTree = "<group>"; };
+		DB6CD6711CA021F70017F3B9 /* ProximaNova-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Black.otf"; path = "Phonapi/ProximaNova-Black.otf"; sourceTree = "<group>"; };
+		DB6CD6721CA021F70017F3B9 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Bold.otf"; path = "Phonapi/ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		DB6CD6731CA021F70017F3B9 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Light.otf"; path = "Phonapi/ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		DB6CD6741CA021F70017F3B9 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Regular.otf"; path = "Phonapi/ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		F4E129E634F3453083BCFFA1 /* RealmJS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmJS.xcodeproj; path = ../node_modules/realm/RealmJS.xcodeproj; sourceTree = "<group>"; };
+		FDDB3FE817A5469995622A65 /* ReactTests.app */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ReactTests.app; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,7 +209,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB805AC91C91969700A043E2 /* libReact.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +219,6 @@
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
-				DBBFF82A1C97D58900956B99 /* RealmReact.framework in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
@@ -252,10 +226,10 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				256FB31191A141D0AFBC94C8 /* libRNBlur.a in Frameworks */,
-				78CCA77BB782428AAE57B85B /* libBVLinearGradient.a in Frameworks */,
-				B7F06EF630234E7AB42C0CAC /* libRNDeviceInfo.a in Frameworks */,
-				345616A1AA9E472689E991B0 /* ReactTests.app in Frameworks */,
+				8F02258427C74C2EB53D3B39 /* libRNBlur.a in Frameworks */,
+				D7C13989B2F048B4B1D78623 /* libRNDeviceInfo.a in Frameworks */,
+				0C51CE60FD774DE2AB96758F /* libBVLinearGradient.a in Frameworks */,
+				B6903B99F80B46D9BF443909 /* ReactTests.app in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +312,6 @@
 		13B07FAE1A68108700A75B9A /* Phonapi */ = {
 			isa = PBXGroup;
 			children = (
-				DB9E298A1C8D9AC2002FE7F9 /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -346,6 +319,10 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				DB6CD6711CA021F70017F3B9 /* ProximaNova-Black.otf */,
+				DB6CD6721CA021F70017F3B9 /* ProximaNova-Bold.otf */,
+				DB6CD6731CA021F70017F3B9 /* ProximaNova-Light.otf */,
+				DB6CD6741CA021F70017F3B9 /* ProximaNova-Regular.otf */,
 			);
 			name = Phonapi;
 			sourceTree = "<group>";
@@ -379,10 +356,10 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				9F0FB5ECF580423D99ADF781 /* RNBlur.xcodeproj */,
-				8D1671783FEF480D9BEC3318 /* BVLinearGradient.xcodeproj */,
-				83486D44D0CD461D9DA8E41C /* RNDeviceInfo.xcodeproj */,
-				48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */,
+				60C093BB80D5482593AF6D02 /* RNBlur.xcodeproj */,
+				358FB76794FF488BB445EDC4 /* RNDeviceInfo.xcodeproj */,
+				4A426A55C2964FD3ADE27E4E /* BVLinearGradient.xcodeproj */,
+				F4E129E634F3453083BCFFA1 /* RealmJS.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -416,49 +393,38 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DB1ADA5E1C942C13006A479C /* Products */ = {
+		DB6CD6461CA017AC0017F3B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DB1ADA6E1C942C14006A479C /* libRNDeviceInfo.a */,
+				DB6CD6541CA017AC0017F3B9 /* libRNBlur.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DB9E29761C8D9AB6002FE7F9 /* Products */ = {
+		DB6CD6551CA017AC0017F3B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DB9E29891C8D9AB6002FE7F9 /* libRNBlur.a */,
+				DB6CD6591CA017AC0017F3B9 /* libRNDeviceInfo.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DB9E29781C8D9AB6002FE7F9 /* Products */ = {
+		DB6CD65A1CA017AC0017F3B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DB9E297C1C8D9AB6002FE7F9 /* libBVLinearGradient.a */,
+				DB6CD65E1CA017AC0017F3B9 /* libBVLinearGradient.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DB9E298A1C8D9AC2002FE7F9 /* Fonts */ = {
+		DB6CD65F1CA017AC0017F3B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DB9E29931C8D9BCF002FE7F9 /* ProximaNova-Black.otf */,
-				DB9E29941C8D9BCF002FE7F9 /* ProximaNova-Bold.otf */,
-				DB9E29951C8D9BCF002FE7F9 /* ProximaNova-Light.otf */,
-				DB9E29961C8D9BCF002FE7F9 /* ProximaNova-Regular.otf */,
-			);
-			name = Fonts;
-			sourceTree = "<group>";
-		};
-		DBBFF80C1C97D4FE00956B99 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DBBFF81F1C97D4FE00956B99 /* libGCDWebServers.a */,
-				DBBFF8211C97D4FE00956B99 /* libRealmJS.a */,
-				DBBFF8231C97D4FE00956B99 /* RealmJS.framework */,
-				DBBFF8251C97D4FE00956B99 /* RealmJSTests.xctest */,
-				DBBFF8271C97D4FE00956B99 /* RealmReact.framework */,
+				DB6CD6671CA017AC0017F3B9 /* libGCDWebServers.a */,
+				DB6CD6691CA017AC0017F3B9 /* libRealmJS.a */,
+				DB6CD66B1CA017AC0017F3B9 /* RealmJS.framework */,
+				DB6CD66D1CA017AC0017F3B9 /* RealmJSTests.xctest */,
+				DB6CD66F1CA017AC0017F3B9 /* RealmReact.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -492,13 +458,10 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				DB1ADA871C942C55006A479C /* Update build number */,
-				DBBFF82E1C97D58900956B99 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DBBFF82D1C97D58900956B99 /* PBXTargetDependency */,
 			);
 			name = Phonapi;
 			productName = "Hello World";
@@ -533,8 +496,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = DB9E29781C8D9AB6002FE7F9 /* Products */;
-					ProjectRef = 8D1671783FEF480D9BEC3318 /* BVLinearGradient.xcodeproj */;
+					ProductGroup = DB6CD65A1CA017AC0017F3B9 /* Products */;
+					ProjectRef = 4A426A55C2964FD3ADE27E4E /* BVLinearGradient.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
@@ -577,16 +540,16 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = DBBFF80C1C97D4FE00956B99 /* Products */;
-					ProjectRef = 48C8D171FACD4A43B6C7121E /* RealmJS.xcodeproj */;
+					ProductGroup = DB6CD65F1CA017AC0017F3B9 /* Products */;
+					ProjectRef = F4E129E634F3453083BCFFA1 /* RealmJS.xcodeproj */;
 				},
 				{
-					ProductGroup = DB9E29761C8D9AB6002FE7F9 /* Products */;
-					ProjectRef = 9F0FB5ECF580423D99ADF781 /* RNBlur.xcodeproj */;
+					ProductGroup = DB6CD6461CA017AC0017F3B9 /* Products */;
+					ProjectRef = 60C093BB80D5482593AF6D02 /* RNBlur.xcodeproj */;
 				},
 				{
-					ProductGroup = DB1ADA5E1C942C13006A479C /* Products */;
-					ProjectRef = 83486D44D0CD461D9DA8E41C /* RNDeviceInfo.xcodeproj */;
+					ProductGroup = DB6CD6551CA017AC0017F3B9 /* Products */;
+					ProjectRef = 358FB76794FF488BB445EDC4 /* RNDeviceInfo.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -668,60 +631,60 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DB1ADA6E1C942C14006A479C /* libRNDeviceInfo.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNDeviceInfo.a;
-			remoteRef = DB1ADA6D1C942C14006A479C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DB9E297C1C8D9AB6002FE7F9 /* libBVLinearGradient.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libBVLinearGradient.a;
-			remoteRef = DB9E297B1C8D9AB6002FE7F9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DB9E29891C8D9AB6002FE7F9 /* libRNBlur.a */ = {
+		DB6CD6541CA017AC0017F3B9 /* libRNBlur.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRNBlur.a;
-			remoteRef = DB9E29881C8D9AB6002FE7F9 /* PBXContainerItemProxy */;
+			remoteRef = DB6CD6531CA017AC0017F3B9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DBBFF81F1C97D4FE00956B99 /* libGCDWebServers.a */ = {
+		DB6CD6591CA017AC0017F3B9 /* libRNDeviceInfo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNDeviceInfo.a;
+			remoteRef = DB6CD6581CA017AC0017F3B9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB6CD65E1CA017AC0017F3B9 /* libBVLinearGradient.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBVLinearGradient.a;
+			remoteRef = DB6CD65D1CA017AC0017F3B9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB6CD6671CA017AC0017F3B9 /* libGCDWebServers.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libGCDWebServers.a;
-			remoteRef = DBBFF81E1C97D4FE00956B99 /* PBXContainerItemProxy */;
+			remoteRef = DB6CD6661CA017AC0017F3B9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DBBFF8211C97D4FE00956B99 /* libRealmJS.a */ = {
+		DB6CD6691CA017AC0017F3B9 /* libRealmJS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRealmJS.a;
-			remoteRef = DBBFF8201C97D4FE00956B99 /* PBXContainerItemProxy */;
+			remoteRef = DB6CD6681CA017AC0017F3B9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DBBFF8231C97D4FE00956B99 /* RealmJS.framework */ = {
+		DB6CD66B1CA017AC0017F3B9 /* RealmJS.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = RealmJS.framework;
-			remoteRef = DBBFF8221C97D4FE00956B99 /* PBXContainerItemProxy */;
+			remoteRef = DB6CD66A1CA017AC0017F3B9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DBBFF8251C97D4FE00956B99 /* RealmJSTests.xctest */ = {
+		DB6CD66D1CA017AC0017F3B9 /* RealmJSTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = RealmJSTests.xctest;
-			remoteRef = DBBFF8241C97D4FE00956B99 /* PBXContainerItemProxy */;
+			remoteRef = DB6CD66C1CA017AC0017F3B9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DBBFF8271C97D4FE00956B99 /* RealmReact.framework */ = {
+		DB6CD66F1CA017AC0017F3B9 /* RealmReact.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = RealmReact.framework;
-			remoteRef = DBBFF8261C97D4FE00956B99 /* PBXContainerItemProxy */;
+			remoteRef = DB6CD66E1CA017AC0017F3B9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -738,12 +701,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB9E29991C8D9BCF002FE7F9 /* ProximaNova-Light.otf in Resources */,
+				DB6CD6771CA021F70017F3B9 /* ProximaNova-Light.otf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				DB9E29981C8D9BCF002FE7F9 /* ProximaNova-Bold.otf in Resources */,
+				DB6CD6761CA021F70017F3B9 /* ProximaNova-Bold.otf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				DB9E29971C8D9BCF002FE7F9 /* ProximaNova-Black.otf in Resources */,
-				DB9E299A1C8D9BCF002FE7F9 /* ProximaNova-Regular.otf in Resources */,
+				DB6CD6751CA021F70017F3B9 /* ProximaNova-Black.otf in Resources */,
+				DB6CD6781CA021F70017F3B9 /* ProximaNova-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,20 +726,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
-		};
-		DB1ADA871C942C55006A479C /* Update build number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Update build number";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -805,11 +754,6 @@
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* Phonapi */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
-		};
-		DBBFF82D1C97D58900956B99 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RealmReact;
-			targetProxy = DBBFF82C1C97D58900956B99 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -887,8 +831,8 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
-					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
+					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/realm/**",
 				);
 				INFOPLIST_FILE = Phonapi/Info.plist;
@@ -907,8 +851,8 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
-					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
+					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/realm/**",
 				);
 				INFOPLIST_FILE = Phonapi/Info.plist;
@@ -957,11 +901,11 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
-					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
+					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/realm/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1001,11 +945,11 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
-					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
+					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/realm/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

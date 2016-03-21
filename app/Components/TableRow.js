@@ -11,6 +11,11 @@ import React, {
 import Hairline from './Hairline';
 
 class TableRow extends Component {
+
+  static defaultProps = {
+    rightArrow: true,
+  };
+
   render() {
     const { onPress, top, rightArrow, children } = this.props;
     return (
@@ -44,9 +49,5 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   }
 });
-
-TableRow.defaultProps = {
-  rightArrow: true,
-}
 
 export default TableRow;

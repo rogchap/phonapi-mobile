@@ -38,6 +38,7 @@ class NumberPadView extends Component {
            <View style={styles.inputLine}>
              <Text
                style={styles.inputText}
+               lineBreakMode="truncating-head"
                numberOfLines={1}>
                {numberToDial}
              </Text>

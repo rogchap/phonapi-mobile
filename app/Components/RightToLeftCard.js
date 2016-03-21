@@ -8,6 +8,7 @@ import React, {
   Animated,
   Platform,
   PanResponder,
+  Dimensions,
   NavigationExperimental,
 } from 'react-native';
 import BackButton from './BackButton';
@@ -18,12 +19,9 @@ const {
   RootContainer : NavigationRootContainer,
  } = NavigationExperimental;
 
+const { width } = Dimensions.get('window');
 
 const ENABLE_GESTURES = Platform.OS !== 'android';
-
-import type {
-  NavigationParentState
-} from 'NavigationStateUtils';
 
 type Layout = {
   initWidth: number,
@@ -32,33 +30,22 @@ type Layout = {
   height: Animated.Value;
 };
 
-type Props = {
-  navState: NavigationParentState;
-  index: number;
-  position: Animated.Value;
-  layout: Layout;
-  enableGestures: bool;
-  children: Object;
-  dispatch: Function;
-};
-
 class Card extends Component {
   _responder: ?Object;
-  _lastHeight: number;
   _lastWidth: number;
   _widthListener: string;
-  _heightListener: string;
-  props: Props;
+
   componentWillMount() {
     if (ENABLE_GESTURES && this.props.enableGestures) {
       this._enableGestures();
     }
   }
+
   _enableGestures() {
     const { dispatch } = this.props;
     this._responder = PanResponder.create({
       onMoveShouldSetPanResponder: (e, {dx, dy, moveX, moveY, x0, y0}) => {
-        if (this.props.navState.index === 0) {
+        if (this.props.scene.index === 0) {
           return false;
         }
         if (moveX > 30) {
@@ -72,68 +59,70 @@ class Card extends Component {
       onPanResponderGrant: (e, {dx, dy, moveX, moveY, x0, y0}) => {
       },
       onPanResponderMove: (e, {dx}) => {
-        const a = (-dx / this._lastWidth) + this.props.navState.index;
+        const a = (-dx / this._lastWidth) + this.props.scene.index;
         this.props.position.setValue(a);
       },
       onPanResponderRelease: (e, {vx, dx}) => {
         const xRatio = dx / this._lastWidth;
         const doesPop = (xRatio + vx) > 0.45;
         if (doesPop) {
-          // todo: add an action which accepts velocity of the pop action/gesture, which is caught and used by NavigationAnimatedView
           dispatch(navigateBack());
           return;
         }
         Animated.spring(this.props.position, {
-          toValue: this.props.navState.index,
+          toValue: this.props.scene.index,
         }).start();
       },
       onPanResponderTerminate: (e, {vx, dx}) => {
         Animated.spring(this.props.position, {
-          toValue: this.props.navState.index,
+          toValue: this.props.scene.index,
         }).start();
       },
     });
   }
+
+  static defaultProps = {
+    enableGestures: true,
+    allowBack: true,
+  };
+
   componentDidMount() {
-    this._lastHeight = this.props.layout.initHeight;
     this._lastWidth = this.props.layout.initWidth;
     this._widthListener = this.props.layout.width.addListener(({value}) => {
       this._lastWidth = value;
     });
-    this._heightListener = this.props.layout.height.addListener(({value}) => {
-      this._lastHeight = value;
-    });
-    // todo: fix listener and last layout dimentsions when props change. potential bugs here
   }
+
   componentWillUnmount() {
     this.props.layout.width.removeListener(this._widthListener);
-    this.props.layout.height.removeListener(this._heightListener);
   }
-  render():Object {
-    const cardPosition = Animated.add(this.props.position, new Animated.Value(-this.props.index));
-    const gestureValue = Animated.multiply(cardPosition, this.props.layout.width);
+
+
+  render():ReactElement {
+    const { layout, position, scene, allowBack } = this.props;
+    const index = scene.index;
+    const inputRange = [index - 1, index, index + 1];
     const touchResponderHandlers = this._responder ? this._responder.panHandlers : null;
 
     let backButton = null;
-    if(this.props.index > 0 && this.props.allowBack) {
+    if(index > 0 && this.props.allowBack) {
       backButton = (
         <BackButton
           style={styles.back}
           onPress={this._onBackButtonPress.bind(this)} />
       );
     }
-
+    //TODO: Reimplement gesture for back
     return (
-      <Animated.View
-        {...touchResponderHandlers}
+      <Animated.View {...touchResponderHandlers}
         style={[
           styles.card,
           {
             transform: [
               {
-                translateX: gestureValue.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: [0, -1],
+                translateX: position.interpolate({
+                  inputRange,
+                  outputRange: [width, 0, -width],
                 }),
               },
             ],
@@ -149,20 +138,15 @@ class Card extends Component {
     this.props.dispatch(navigateBack());
   }
 }
-Card.defaultProps = {
-  enableGestures: true,
-  allowBack: true,
-}
 
-function createRightToLeftCard(Comp: Component, cardProps: Object = {}): Component {
+function createRightToLeftCard(Comp: any, cardProps: Object = {}): any {
   class RightToLeftCard extends Component {
     render() {
-      const { navState, dispatch, index, position, layout, ...other } = this.props;
+      const { dispatch, scene, position, layout, ...other } = this.props;
       return (
         <Card
           dispatch={dispatch}
-          navState={navState}
-          index={index}
+          scene={scene}
           position={position}
           layout={layout} {...cardProps} >
           <Comp dispatch={dispatch} {...other} />

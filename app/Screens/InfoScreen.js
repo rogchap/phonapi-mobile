@@ -21,6 +21,7 @@ import { navigatePush } from '../actions/navigation';
 const { width: pageWidth } = Dimensions.get('window');
 
 class InfoScreen extends Component {
+  state: any;
   constructor(props) {
     super(props);
     this.state = {

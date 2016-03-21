@@ -9,9 +9,12 @@ import React, {
 } from 'react-native';
 import CallButton from './CallButton';
 
-class OnCallButton extends Component {
+class OnCallButton extends Component<any, any, any> {
   _tintColor: string;
   _baseStyle: Object;
+
+  static ACCEPT = 'accept';
+  static DECLINE = 'decline';
 
   constructor(props:any) {
     super(props);
@@ -62,9 +65,6 @@ class OnCallButton extends Component {
     ).start();
   }
 }
-
-OnCallButton.ACCEPT = 'accept';
-OnCallButton.DECLINE = 'decline';
 
 OnCallButton.propTypes = {
   type: React.PropTypes.oneOf([OnCallButton.ACCEPT, OnCallButton.DECLINE]),

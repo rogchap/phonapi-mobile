@@ -9,6 +9,7 @@ type Action = {
 }
 
 const initialState = {
+  key: 'masterNav',
   index: 0,
   children: [
     { key: 'Info' },
@@ -36,6 +37,7 @@ export default function navigation(state:Object = initialState, action:Action = 
       };
     case types.NAV_RESET:
       return {
+        key: 'masterNav',
         index: 0,
         children: [
           { key: action.key },
