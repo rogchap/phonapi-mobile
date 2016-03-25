@@ -34,7 +34,6 @@ class Phonapi extends Component {
   render() {
     const { navState, callState, dispatch } = this.props;
     const currentKey = navState.children[navState.index].key;
-    console.log(currentKey, navState);
     return (
       <Image source={require('../images/bg.png')} style={styles.bg}>
         <View style={{ flex:1 }}>

@@ -1,10 +1,12 @@
 import React, {
   Component,
   View,
-  Text,
   StyleSheet,
 } from 'react-native';
-import CtaButton from './CtaButton';
+import {connect} from 'react-redux';
+
+import CtaButton from '../components/CtaButton';
+import Text from '../components/Text';
 
 class NoNumberView extends Component {
   render() {
@@ -16,7 +18,7 @@ class NoNumberView extends Component {
           <Text style={styles.text}>phone number</Text>
         </View>
         <View style={styles.cta}>
-          <CtaButton onPress={this.props.onPress}>
+          <CtaButton>
             Get a local number
           </CtaButton>
         </View>
@@ -39,8 +41,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: {
-    color: 'white',
-    fontFamily: 'ProximaNova-Regular',
     fontSize: 30,
     textAlign: 'center',
   },

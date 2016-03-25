@@ -10,7 +10,7 @@ import React, {
 
 import RightToLeftCard from '../components/RightToLeftCard';
 import MenuButton from '../components/MenuButton';
-import NoNumberView from '../components/NoNumberView';
+import NoNumberView from '../containers/NoNumberView';
 import NumberPadView from '../containers/NumberPadView';
 
 class HomeScreen extends Component {
@@ -18,10 +18,10 @@ class HomeScreen extends Component {
   render() {
     //TODO render based on status
     let view;
-    if (true) {
+    if (false) {
       view = <NumberPadView />
     } else {
-      view = <NoNumberView onPress={() => this.props.onNavigate({ key: 'NumberSearch' })} />
+      view = <NoNumberView />
     }
 
 
