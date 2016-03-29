@@ -18,7 +18,7 @@ class HomeScreen extends Component {
   render() {
     //TODO render based on status
     let view;
-    if (false) {
+    if (true) {
       view = <NumberPadView />
     } else {
       view = <NoNumberView />

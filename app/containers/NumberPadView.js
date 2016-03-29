@@ -14,6 +14,7 @@ import ImageButton from '../components/ImageButton';
 import CallButton from '../components/CallButton';
 import Text from '../components/Text';
 import DialCodePicker from '../components/DialCodePicker';
+import FormattedNumber from '../components/FormattedNumber';
 import CountryList from '../constants/CountryList';
 import { shouldShowDialCodePicker, changeCountryCode,
   addDigit, removeLastDigit, changeLastDigitTo, clear } from '../actions/callPad';
@@ -36,12 +37,13 @@ class NumberPadView extends Component {
              {country.dialCode}
            </DropdownButton>
            <View style={styles.inputLine}>
-             <Text
+             <FormattedNumber
                style={styles.inputText}
                lineBreakMode="truncating-head"
-               numberOfLines={1}>
+               numberOfLines={1}
+               countryCode={countryCode}>
                {numberToDial}
-             </Text>
+             </FormattedNumber>
              {hasNumber ?
               <ImageButton
                 onPress={() => dispatch(removeLastDigit())}
@@ -93,7 +95,7 @@ const styles = StyleSheet.create({
   },
   inputText: {
     fontSize: 34,
-    width: pageWidth - 120 - 45,
+    width: pageWidth - 120,
     height: 40,
   },
   from: {
