@@ -29,7 +29,7 @@ export default class App extends Component {
   componentWillMount() {
     persistStore(store, {
       storage: AsyncStorage,
-      blacklist: ['onCall']
+      blacklist: ['onCall', 'loginForm']
     });
   }
 

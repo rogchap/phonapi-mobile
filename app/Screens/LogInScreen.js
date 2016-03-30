@@ -8,14 +8,19 @@ import React, {
 } from 'react-native';
 import Button from 'react-native-button';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
+
+import LoginFormContainer from '../containers/LoginFormContainer';
 import RightToLeftCard from '../components/RightToLeftCard';
 import CtaButton from '../components/CtaButton';
 import TextInputField from '../components/TextInputField';
 import Logo from '../components/Logo';
 
 class LogInScreen extends Component {
-  _emailTextInputField;
-  _passwordTextInputField;
+  _formContainer: LoginFormContainer;
+
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (
@@ -24,19 +29,7 @@ class LogInScreen extends Component {
           <Logo />
         </View>
         <View style={styles.form}>
-          <TextInputField
-            ref={c => this._emailTextInputField = c}
-            label="Email"
-            placeholder="eg. sam.smith@mycompany.com"
-            keyboardType="email-address"
-            autoCapitalize="none"
-            iconSource={require('../images/email.png')}  />
-          <TextInputField
-            ref={c => this._passwordTextInputField = c}
-            label="Password"
-            placeholder="enter your password"
-            secureTextEntry={true}
-            iconSource={require('../images/lock.png')} />
+          <LoginFormContainer ref={c => this._formContainer = c && c.getWrappedInstance()}/>
         </View>
         <View style={styles.cta}>
           <CtaButton onPress={this._onCtaButtonPress.bind(this)}>Sign in</CtaButton>
@@ -47,13 +40,14 @@ class LogInScreen extends Component {
   }
 
   _blurInputs() {
-    this._emailTextInputField.blur();
-    this._passwordTextInputField.blur();
+    this._formContainer.blurInputs();
   }
 
   _onCtaButtonPress() {
-    this._blurInputs();
-    this.props.onNavigate({ type: 'Reset', key: 'Home' });
+    if(this._formContainer.validate()) {
+      this._blurInputs();
+      //this.props.onNavigate({ type: 'Reset', key: 'Home' });
+    }
   }
 }
 

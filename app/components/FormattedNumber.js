@@ -16,9 +16,9 @@ class FormattedNumber extends Component {
 
   static defaultProps = {
     countryCode: 'AU',
-  }
+  };
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: any) {
     if (nextProps.countryCode !== this.props.countryCode) {
       this._formatter = new AsYouTypeFormatter(nextProps.countryCode);
     }

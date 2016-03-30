@@ -3,17 +3,24 @@ import React, {
   PropTypes,
   StyleSheet,
   View,
-  Text,
   Image,
   TextInput,
 } from 'react-native';
+import Animatable from 'react-native-animatable';
+
 import Hairline from './Hairline';
+import Text from './Text';
+
+import * as validators from '../helpers/validators';
 
 class TextInputField extends Component {
+  _field: ReactElement;
 
   static propTypes = {
     ...TextInput.propTypes,
     label: PropTypes.string,
+    error: PropTypes.bool,
+    validations: PropTypes.object,
   };
 
   static defaultProps = {
@@ -21,9 +28,14 @@ class TextInputField extends Component {
     hairline: true,
   };
 
-  render() {
+  componentDidUpdate(prevProps) {
+    if(this.props.error && !prevProps.error) {
+      this._field.shake();
+    }
+  }
 
-    const { label, iconSource, hairline, ...other } = this.props;
+  render() {
+    const { label, iconSource, hairline, error, ...other } = this.props;
 
     let hairlineView;
     if (hairline) {
@@ -40,15 +52,19 @@ class TextInputField extends Component {
           <View style={styles.icon}>
             <Image source={iconSource} />
           </View>
-          <View style={styles.field}>
-            <Text style={styles.label}>{label.toUpperCase()}</Text>
+          <Animatable.View
+            style={styles.field}
+            ref={c => this._field = c}>
+            <Text style={[styles.label, error && styles.labelWhenError]}>
+              {label.toUpperCase()}
+            </Text>
             <TextInput
               ref={c => this._textInput = c}
               style={styles.input}
               placeholderTextColor="rgba(255,255,255,0.5)"
               selectionColor="#4FCBE6"
               {...other} />
-          </View>
+          </Animatable.View>
         </View>
         {hairlineView}
       </View>
@@ -61,6 +77,19 @@ class TextInputField extends Component {
 
   blur() {
     this._textInput.blur();
+  }
+
+  validate() {
+    let isValid = true;
+    const { validations } = this.props;
+    if ( !validations ||  Object.keys(validations).length === 0) return isValid;
+
+    Object.keys(validations).forEach(rule => {
+      if(!validators[rule](this.props.value, validations[rule])) {
+        isValid = false;
+      }
+    });
+    return isValid;
   }
 }
 
@@ -83,10 +112,11 @@ const styles = StyleSheet.create({
     width: 20,
   },
   label: {
-    color: 'white',
     fontSize: 12,
-    fontFamily: 'ProximaNova-Regular',
     letterSpacing: 1.3,
+  },
+  labelWhenError: {
+    color: 'rgb(255, 80, 67)',
   },
   input: {
     color: 'white',
