@@ -14,7 +14,7 @@ class LoginForm extends Component {
   _passwordTextInputField: TextInputField;
 
   render() {
-    const { emailText, passwordText, emailValid, passwordValid, onChangeText } = this.props;
+    const { emailText, passwordText, emailValid, passwordValid, changeInputText } = this.props;
 
     return (
       <View>
@@ -26,7 +26,7 @@ class LoginForm extends Component {
           autoCapitalize="none"
           error={!emailValid}
           validations={{isRequired: true, isEmail: true}}
-          onChangeText={text => onChangeText('emailText', text)}
+          onChangeText={text => changeInputText('emailText', text)}
           value={emailText}
           iconSource={require('../images/email.png')}  />
         <TextInputField
@@ -36,7 +36,7 @@ class LoginForm extends Component {
           secureTextEntry={true}
           error={!passwordValid}
           validations={{isRequired: true}}
-          onChangeText={text => onChangeText('passwordText', text)}
+          onChangeText={text => changeInputText('passwordText', text)}
           value={passwordText}
           iconSource={require('../images/lock.png')} />
       </View>
@@ -49,11 +49,11 @@ class LoginForm extends Component {
   }
 
   validate(): boolean {
-    const { onValidateInputs } = this.props;
+    const { changeInputErrors } = this.props;
 
     const emailValid = this._emailTextInputField.validate();
     const passwordValid = this._passwordTextInputField.validate();
-    onValidateInputs({
+    changeInputErrors({
       emailValid,
       passwordValid,
     });

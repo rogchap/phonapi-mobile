@@ -16,13 +16,10 @@ class LoginFormContainer extends Component {
   _form: LoginForm;
 
   render() {
-    const { dispatch, ...formProps } = this.props;
     return (
       <LoginForm
         ref={c => this._form = c}
-        onValidateInputs={ (nextState: Object) => dispatch(changeInputErrors(nextState))}
-        onChangeText={(key: string, value: string) => dispatch(changeInputText(key, value))}
-        {...formProps} />
+        {...this.props} />
     );
   }
 
@@ -40,4 +37,8 @@ function mapStateToProps(state) {
   return { ...loginForm };
 }
 
-export default connect(mapStateToProps, null, null, {withRef: true})(LoginFormContainer);
+export default connect(
+  mapStateToProps,
+  {changeInputErrors, changeInputText},
+  null,
+  {withRef: true})(LoginFormContainer);

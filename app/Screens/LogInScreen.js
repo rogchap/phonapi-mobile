@@ -6,6 +6,7 @@ import React, {
   View,
   StyleSheet,
 } from 'react-native';
+import { connect } from 'react-redux';
 import Button from 'react-native-button';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
 
@@ -14,6 +15,9 @@ import RightToLeftCard from '../components/RightToLeftCard';
 import CtaButton from '../components/CtaButton';
 import TextInputField from '../components/TextInputField';
 import Logo from '../components/Logo';
+import Loading from '../components/Loading';
+
+import { loginWithPassword } from '../actions/loginForm';
 
 class LogInScreen extends Component {
   _formContainer: LoginFormContainer;
@@ -35,6 +39,9 @@ class LogInScreen extends Component {
           <CtaButton onPress={this._onCtaButtonPress.bind(this)}>Sign in</CtaButton>
         </View>
         <KeyboardSpacer />
+        <Loading
+          show={this.props.isLoggingIn}
+          text="Signing in..." />
       </View>
     );
   }
@@ -46,7 +53,7 @@ class LogInScreen extends Component {
   _onCtaButtonPress() {
     if(this._formContainer.validate()) {
       this._blurInputs();
-      //this.props.onNavigate({ type: 'Reset', key: 'Home' });
+      this.props.dispatch(loginWithPassword());
     }
   }
 }
@@ -70,5 +77,14 @@ const styles = StyleSheet.create({
   },
 });
 
+function mapStateToProps(state) {
+  const { loginForm } = state;
+
+  return {
+    isLoggingIn: loginForm.isLoggingIn,
+  };
+}
+
 LogInScreen = RightToLeftCard.create(LogInScreen);
-export default LogInScreen;
+
+export default connect(mapStateToProps)(LogInScreen);
