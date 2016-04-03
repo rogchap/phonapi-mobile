@@ -8,7 +8,7 @@ import React, {
 } from 'react-native';
 import { connect } from 'react-redux';
 
-import { changeInputText, changeInputErrors } from '../actions/loginForm';
+import { changeInputText, changeInputErrors } from '../actions/loginForm'; 
 import LoginForm from '../components/LoginForm';
 
 class LoginFormContainer extends Component {
