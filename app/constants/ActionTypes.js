@@ -26,3 +26,7 @@ export const SET_LOGIN_LOADING = 'SET_LOGIN_LOADING';
 export const RESET_LOGIN_FORM = 'RESET_LOGIN_FORM';
 
 export const SET_INFO_PAGE_INDEX = 'SET_INFO_PAGE_INDEX';
+
+export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
+
+export const RESET = 'RESET';

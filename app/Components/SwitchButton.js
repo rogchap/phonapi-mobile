@@ -4,7 +4,7 @@
 import React, {
   PropTypes,
   Component,
-} from 'react-native';
+} from 'react';
 import ImageButton from './ImageButton';
 
 class SwitchButton extends Component {

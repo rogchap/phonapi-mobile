@@ -3,11 +3,10 @@
 
 import React, {
   Component,
-} from 'react-native';
+} from 'react';
+import { Picker as RNPicker } from 'react-native';
 import Picker from './Picker';
 import CountryList from '../constants/CountryList';
-
-const { Picker: RNPicker } = React;
 
 class DialCodePicker extends Component {
 

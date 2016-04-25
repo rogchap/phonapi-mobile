@@ -3,6 +3,8 @@
 
 import React, {
   Component,
+} from 'react';
+import {
   View,
   StyleSheet,
 } from 'react-native';
@@ -24,6 +26,7 @@ class LoginForm extends Component {
           placeholder="eg. sam.smith@mycompany.com"
           keyboardType="email-address"
           autoCapitalize="none"
+          autoCorrect={false}
           error={!emailValid}
           validations={{isRequired: true, isEmail: true}}
           onChangeText={text => changeInputText('emailText', text)}

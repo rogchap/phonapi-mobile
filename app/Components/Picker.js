@@ -3,14 +3,16 @@
 
 import React, {
   Component,
-  View,Text,
+} from 'react';
+import {
+  View,
+  Text,
   StyleSheet,
   Animated,
   TouchableWithoutFeedback,
+  Picker as RNPicker,
 } from 'react-native';
 import { BlurView } from 'react-native-blur';
-
-const { Picker: RNPicker } = React;
 
 class Picker extends Component<any, any, any> {
   state: any;

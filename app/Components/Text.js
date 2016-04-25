@@ -3,10 +3,11 @@
 
 import React, {
   Component,
+} from 'react';
+import {
   StyleSheet,
+  Text as RNText,
 } from 'react-native';
-
-const { Text: RNText } = React;
 
 class Text extends Component {
   render() {

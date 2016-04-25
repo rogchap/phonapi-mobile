@@ -1,8 +1,14 @@
 /* @flow */
 'use strict';
 
+import {
+  Alert
+} from 'react-native';
+
 import * as types from '../constants/ActionTypes';
 import { navigateReset } from './navigation';
+import { setAuthToken } from './user';
+import { fetchGraphQL } from '../utils/fetching';
 
 type Action = {
   type: string,
@@ -39,12 +45,24 @@ function resetLoadingForm(): Action {
 export function loginWithPassword(): ?Function {
   return function(dispatch, getStore) {
     dispatch(setLoading(true));
-    const { loginForm } = getStore();
-
-    //TODO Authenticate with server
-    setTimeout(() => {
-      dispatch(resetLoadingForm());
-      dispatch(navigateReset('Home'));
-    }, 2000);
+    const { loginForm: {emailText, passwordText} } = getStore();
+    const query = `
+      query($email: Email!, $password: Password!) {
+        payload: login(email: $email, password: $password) {
+          authToken
+        }
+      }
+    `;
+    const variables = { email: emailText, password: passwordText };
+    fetchGraphQL({query, variables}).then(({ error, data }) => {
+      if (error) {
+        dispatch(setLoading(false));
+        Alert.alert(error._error, error.email || error.password || 'Unknown error');
+      } else {
+        dispatch(setAuthToken(data.payload.authToken));
+        dispatch(resetLoadingForm());
+        dispatch(navigateReset('Home'));
+      }
+    });
   }
 }

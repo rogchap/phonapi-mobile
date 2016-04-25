@@ -3,6 +3,8 @@
 
 import React, {
   Component,
+} from 'react';
+import {
   View,
   StyleSheet,
   LayoutAnimation,
@@ -14,7 +16,7 @@ class OnCallButtons extends Component {
   _mainCallButton: OnCallButton;
 
   componentWillMount() {
-    LayoutAnimation.easeInEaseOut(); 
+    LayoutAnimation.easeInEaseOut();
   }
 
   componentDidUpdate() {

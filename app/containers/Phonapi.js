@@ -3,8 +3,11 @@
 
 import React, {
   Component,
+} from 'react';
+import {
   StyleSheet,
-  View, Text,
+  View,
+  Text,
   Image,
   NavigationExperimental,
   StatusBar,

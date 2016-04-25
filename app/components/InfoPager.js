@@ -3,6 +3,8 @@
 
 import React, {
   Component,
+} from 'react';
+import {
   View,
   Image,
   ScrollView,
@@ -33,7 +35,7 @@ class InfoPager extends Component {
   componentDidMount() {
     this._timer = setTimeout(() => this._animateArrow(), 2000);
     requestAnimationFrame(() => {
-      this._scrollView.scrollTo({ x:this.props.pageIndex * pageWidth, y:0, animated: false });
+      this._scrollView && this._scrollView.scrollTo({ x:this.props.pageIndex * pageWidth, y:0, animated: false });
     });
   }
 

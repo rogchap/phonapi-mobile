@@ -8,7 +8,7 @@
   "dependencies": {
     "google-libphonenumber": "^1.0.15",
     "react": "^0.14.5",
-    "react-native": "^0.23.0-rc",
+    "react-native": "^0.25.0-rc",
     "react-native-animatable": "^0.5.2",
     "react-native-blur": "^0.7.10",
     "react-native-button": "^1.4.2",

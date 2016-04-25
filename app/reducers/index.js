@@ -6,6 +6,7 @@ import callPad from './callPad';
 import onCall from './onCall';
 import loginForm from './loginForm';
 import info from './info';
+import user from './user';
 
 export {
   navigation,
@@ -13,4 +14,5 @@ export {
   onCall,
   loginForm,
   info,
+  user,
 };

@@ -3,7 +3,7 @@
 
 import React, {
   Component,
-} from 'react-native';
+} from 'react';
 import Text from './Text';
 import { AsYouTypeFormatter } from 'google-libphonenumber';
 
